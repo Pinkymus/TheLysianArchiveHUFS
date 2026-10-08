@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Lysian Archive</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+        <header style="background-image: url('/images/banner-image-1.webp'); background-size: cover; height: 300px;">
+            <h1>Login</h1>
+            <div id="navbar"></div>
+            <script>
+                fetch("../components/navigationbar.html")
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById("navbar").innerHTML = html;
+                        document.getElementById("login-link").classList.add("active");
+                    });
+            </script>
+        </header>
+
+
+        <main>
+            <section id="login">
+                <h2>Login</h2>
+                <form>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+
+                    <br>
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <br><br>
+                    <input type="submit" value="Login">
+                    <input type="reset" value="Cancel">
+                </form>
+            </section>
+            <section id="register">
+                <h2>Not yet a member?</h2>
+                <p>Register below to create an account.</p>
+                <form>
+                    <label for="new-username">Username:</label>
+                    <input type="text" id="new-username" name="new-username" required>
+
+                    <br>
+
+                    <label for="new-password">Password:</label>
+                    <input type="password" id="new-password" name="new-password" required>
+                    <label for="new-password-again">Password again:</label>
+                    <input type="password" id="new-password" name="new-password-again" required>
+                    <!-- There should be a check that these two passwords are identical -->
+                    <!-- This is to ensure the user has not made an error while typing -->
+                    <br><br>
+                    <input type="submit" value="Register">
+                    <input type="reset" value="Cancel">
+                </form>
+        </main>
+
+        <div id="footer"></div>
+        <script> getFooter() </script>
+    </body>
+</html>

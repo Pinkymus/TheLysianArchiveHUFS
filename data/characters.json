@@ -1,0 +1,145 @@
+{
+    "characters": [
+        {
+            "name": "Katharina",
+            "group": "Earth",
+            "bio": [
+                "Katharina, the main protagonist of the Kat & Leo story, is a 23-year-old woman from Earth who is suddenly transported to the Lysian Empire. On earth she was often described by her friends as intelligent, analytical and stubborn, and in this forigne world those are the attributes she leans into to survive.",
+                "Her knowledge from Earth shapes the way she understands aura, making her approach unusually logical and experimental compared with those born in Auropia.",
+                "<h4>On Earth</h4>",
+                "Katharina was born and raised in Copenhagen, Denmark, where she at the storys beginning is living on her own while attending university. Her life is that of an ordinary young adult, with a focus on her studies, her friends and her relationship with Oscar.",
+                "Her mother played a great role in her upbringing often pushing Katharina to have a great perseverance, while her father took a more laid back approach to parenting, though his interest in exploring the world through the glasses of science likely contributed to her choice of education."
+            ],
+            "image": "/images/characters/katharina.webp"
+        },
+        {
+            "name": "Leopold",
+            "group": "The Imperial Family",
+            "bio": [
+                "Leopold is the Crown Prince of the Lysian Empire and heir to the imperial throne. Charming, intelligent and deeply calculating, he is accustomed to moving through court politics with an ease that comes from both status and overwhelming personal power.",
+                "His transcendental aura allows him to perceive the thoughts of others, leaving very few people capable of surprising him. Katharina becomes a rare exception, as her foreign language and unusual mind prevent him from understanding her as easily as he understands everyone else."
+            ],
+            "image": "/images/characters/leopold.webp"
+        },
+        {
+            "name": "Oscar Nielsen",
+            "group": "Earth",
+            "bio": [
+                "Oscar is Katharina's boyfriend from Earth. After her disappearance connected to the emergence of cross-dimensional energy, he becomes one of its most outspoken opponents.",
+                "He later founds Citizens Against Dimensional Energy, arguing that humanity is attempting to exploit something it does not understand and may be reaching blindly into another world.",
+                "Oscar primarily appears in the prologues of the books and in Katharina's memories. His perspective provides a window into events on Earth and shows how the world she left behind continues to change after her disappearance."
+            ],
+            "image": ""
+        },
+        {
+            "name": "Princess Evalia",
+            "group": "The Imperial Family",
+            "bio": [
+                "Evalia is the eldest princess of the Lysian Empire and, after Leopold, one of the closest members of the imperial line to the throne. Her striking golden hair and resemblance to the legendary Lysies have made her image especially recognizable throughout the Empire.",
+                "As a princess, her eventual marriage carries considerable political weight. Although she is expected to marry either a foreign prince or a powerful noble, Evalia herself wishes to remain within the Empire."
+            ],
+            "image": "/images/characters/evalia.webp"
+        },
+        {
+            "name": "Prince Alfred",
+            "group": "The Imperial Family",
+            "bio": [
+                "Alfred is the youngest of the three imperial siblings. Intelligent, direct and socially awkward, he is noticeably less comfortable with courtly performance than Leopold.",
+                "Discussions have already begun about arranging a politically useful marriage for him, an idea he has little enthusiasm for. In reality, Alfred is far more interested in Rambert, a stable boy at the palace, something Katharina is one of the few people to notice."
+            ],
+            "image": "/images/characters/alfred.webp"
+        },
+        {
+            "name": "Empress Aryshia",
+            "group": "The Imperial Family",
+            "bio": [
+                "Aryshia is the reigning Empress of the Lysian Empire and mother of Leopold, Evalia, Alfred, Lilyana, and Rosalina. Having inherited the throne at a young age, she has spent much of her reign learning never to hesitate publicly in her own judgement.",
+                "She believes that trusting oneself is a virtue, particularly in a ruler. Practical and politically experienced, Aryshia expects Leopold to treat his position as heir as a responsibility rather than merely a privilege."
+            ],
+            "image": "/images/characters/aryshia.webp"
+        },
+        {
+            "name": "Princesses Lilyana and Rosalina",
+            "group": "The Imperial Family",
+            "bio": [
+                "Lilyana and Rosalina are the youngest members of the imperial family and Leopold's twin little sisters.",
+                "The two are almost inseparable and are rarely seen without one another. Energetic and mischievous, they bring a much more playful presence to the imperial household than their older siblings."
+            ],
+            "image": "/images/characters/lilyana-and-rosalina.webp"
+        },
+        {
+            "name": "Lian",
+            "group": "Companions",
+            "bio": [
+                "Lian is Katharina's first true friend in the Empire of Lysies and one of the people who helps her survive life at Ravnsund Manor. Quiet, practical and highly capable, she quickly becomes someone Katharina can rely on.",
+                "Beneath Lian's carefully controlled exterior is a stubborn streak of her own. She teaches Katharina Lysian, shares in small acts of forbidden independence, and has learned how to move through the system without drawing unnecessary punishment.",
+                "Lian was originally owned by a different noble house, but was bought by Asbjørn at a good price for her decent Aura abilities and her literacy skills. What may not be obvious to every reader is that the dance teacher employed at the Ravnsund is a noble woman who knew Lian before and cares for her."
+            ],
+            "image": "/images/characters/lian.webp"
+        },
+        {
+            "name": "Letessa",
+            "group": "Companions",
+            "bio": [
+                "Letessa is a highly trained servant who returns to Ravnsund Manor after having already been sold once before, to a Master that is now disgraced. She is polite, graceful and exceptionally skilled, she initially appears almost perfectly suited to the role expected of her.",
+                "Behind that polished behaviour, however, Letessa is far more fragile than she first appears. Her previous experiences have left her prone to retreating inward when frightened, but she also has a gentle and mediating nature that often helps ease conflict within the group."
+            ],
+            "image": "/images/characters/letessa.webp"
+        },
+        {
+            "name": "Deliah",
+            "group": "Companions",
+            "bio": [
+                "Deliah is a gifted combat slave known by the title \"Heart Reaper\". Stoic, self-assured and accustomed to violence, she stands apart from the other girls at Ravnsund Manor because much of her training is focused on combat rather than domestic service.",
+                "Her powerful aura makes her one of the group's most formidable members, and she is later chosen to represent the imperial household in the Games held at the City of Lysies."
+            ],
+            "image": "/images/characters/deliah-2.webp"
+        },
+        {
+            "name": "Sabuh",
+            "group": "Companions",
+            "bio": [
+                "Sabuh is elegant, perceptive and exceptionally skilled at presenting herself as the perfect servant. Before her masters she is serene, gracious and obedient, while in private she is sharp-tongued, competitive and highly calculating.",
+                "She has learned to use beauty, manners and social awareness as tools for survival. Her relationship with Katharina begins as a rivalry, but circumstances increasingly force the two to recognise that they may be more useful to one another as allies.",
+                "Before being won by Leopold in a game of Overherre, and later traded with Asbjørn for holding back the sale of Katharina, Sabuh traveled the southern part of the continent with the merchant known as Gustav Bartosh."
+            ],
+            "image": "/images/characters/sabuh.webp"
+        },
+        {
+            "name": "Asbjørn Ravnsund",
+            "group": "Ravnsund Manor",
+            "bio": [
+                "Asbjørn is the first son of Duke Ravnsund and the nominal master of Ravnsund Manor, where slaves are trained before being sold to noble households. Charming, socially skilled and pragmatic, he treats the manor primarily as a business.",
+                "He is also one of Prince Leopold's closest friends and acts as a link between the manor and the imperial court. Though ambitious and deeply complicit in the system around him, he is generally more interested in opportunity and influence than cruelty for its own sake."
+            ],
+            "image": "/images/characters/asbjorn.webp"
+        },
+        {
+            "name": "Madam Ræfna",
+            "group": "Ravnsund Manor",
+            "bio": [
+                "Madam Ræfna runs Ravnsund Manor on a day-to-day basis. Tall, severe and meticulous, she is responsible for turning new arrivals into servants capable of meeting the expectations of the Empire's upper classes.",
+                "She is a demanding teacher of language, etiquette and aura control, and takes immense pride in the quality of those trained under her. Beneath her harsh exterior, however, she occasionally reveals a more complicated awareness of the lives shaped by the system she helps maintain."
+            ],
+            "image": "/images/characters/raefna.webp"
+        },
+        {
+            "name": "Marek",
+            "group": "Ravnsund Manor",
+            "bio": [
+                "Marek is an older slave who works around Ravnsund Manor and becomes an unexpected source of help and perspective for Katharina. He was himself trained at the manor when he was young, during a much harsher period under Duke Ravnsund.",
+                "After years spent serving elsewhere, life eventually brought him back to the manor. His experiences give Katharina a rare glimpse into what the institution was like before Asbjørn inherited its management, and into the limited futures available to those who pass through it."
+            ],
+            "image": "/images/characters/marek.webp"
+        },
+        {
+            "name": "Runa",
+            "group": "Ravnsund Manor",
+            "bio": [
+                "Runa is one of the girls Katharina befriends during her time at Ravnsund Manor. More carefree and clumsy than many of the others, she becomes part of the small group that makes Katharina's early life there more bearable.",
+                "Her eventual removal from the manor becomes an important reminder that even those who follow the rules can disappear from one another's lives without warning or choice."
+            ],
+            "image": ""
+        }
+    ]
+}

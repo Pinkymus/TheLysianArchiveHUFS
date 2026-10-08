@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Lysian Archive</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../style.css">
+        <script src="../components.js"></script>
+    </head>
+    <body>
+         <header style="background-image: url('/images/banner-image-1.webp'); background-size: cover; height: 300px;">
+            <h1>Forums</h1>
+            <div id="navbar"></div>
+            <script> getActiveNavigation("forums-link") </script>
+        </header>
+
+
+        <main>
+            <div id="post-feed"></div>
+            <script>
+                fetch("/components/forum-post.html")
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById("post-feed").innerHTML = html;
+                    });
+            </script>
+        </main>
+
+        <div id="footer"></div>
+        <script> getFooter() </script>
+    </body>
+</html>

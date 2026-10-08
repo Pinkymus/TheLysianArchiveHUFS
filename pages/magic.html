@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aura Magic</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../style.css">
+        <script src="/components.js"></script>
+    </head>
+    <body>
+        <header style="background-image: url('/images/banner-image-1.webp'); background-size: cover; height: 300px;">
+            <h1>Aura</h1>
+            <div id="navbar"></div>
+            <script>
+                fetch("../components/navigationbar.html")
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById("navbar").innerHTML = html;
+                        document.getElementById("magic-link").classList.add("active");
+                    });
+            </script>
+        </header>
+
+
+        <main>
+            <section id="aura">
+                <h2>Aura</h2>
+
+                <p>
+                    Aura is an energy possessed by living creatures in Auropia.
+                    A person's ability to use aura depends on both their natural capacity and their learned control.
+                </p>
+
+                <br>
+                <h3>Levels of Aura Control</h3>
+
+                <p>
+                    Within the Lysian Empire, aura control is traditionally divided
+                    into five levels.
+                </p>
+                <br>
+                <ol>
+                    <li><strong>Inward</strong> &rarr; Control of aura within the body.</li>
+                    <li><strong>Outward</strong> &rarr; Using aura to affect objects when in direct contact.</li>
+                    <li><strong>Projective</strong> &rarr; Projecting aura beyond the body.</li>
+                    <li><strong>Extractive</strong> &rarr; Drawing aura from others.</li>
+                    <li><strong>Transcendental</strong> &rarr; Rare, highly individual abilities.</li>
+                </ol>
+                <br>
+                <h3>Aura and Biology</h3>
+
+                <p>
+                    The ability to develop aura is an inherited biological trait,
+                    but it remains dormant unless a person is exposed to enough ambient aura.
+                </p>
+
+                <p>
+                    Aura users also release aura into their surroundings. 
+                    Over time, this creates a feedback loop where aura-rich environments produce more aura users, 
+                    who then make the environment even richer in aura.
+                </p>
+            </section>
+
+            <section id="brands">
+                <h2>Brands</h2>
+
+                <p>
+                    A brand is an engraving placed directly upon a person's aura.
+                    The visible scar left on the body is only a physical consequence of the deeper mark.
+                </p>
+
+                <p>
+                    Brands are powered by the branded person's own aura. 
+                    Because of this, suppressing the flow of aura can weaken a brand's influence,
+                    although doing so for too long can be dangerous.
+                </p>
+            </section>
+
+
+            <section id="stones">
+                <h2>Aura Stones</h2>
+
+                <p>
+                    Aura stones are gemstones whose crystal structures allow them to carry and interact with aura.
+                </p>
+
+                <p>
+                    They can be used in their natural form or engraved with runes that guide the way aura flows through them. 
+                    Stones with regular, well-ordered crystal structures are generally the most suitable.
+                </p>
+            </section>
+        </main>
+
+        <div id="footer"></div>
+        <script> getFooter() </script>
+    </body>
+</html>
