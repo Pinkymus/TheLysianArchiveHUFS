@@ -1,190 +1,204 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>The World of Lysies</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="../style.css">
-    </head>
-    <body>
-        <header style="background-image: url('/images/banner-image-1.webp'); background-size: cover; height: 300px;">
-            <h1>The World of Lysies</h1>
-            <div id="navbar"></div>
-            <script>
-                fetch("../components/navigationbar.html")
-                    .then(response => response.text())
-                    .then(html => {
-                        document.getElementById("navbar").innerHTML = html;
-                        document.getElementById("world-link").classList.add("active");
-                    });
-            </script>
-        </header>
+
+<head>
+    <title>The World of Lysies</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <script src="/components.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>The World of Lysies</h1>
+        <div id="navbar"></div>
+        <script> getActiveNavigation("world-link")</script>
+    </header>
 
 
-        <main style="max-width: 60%; margin: 0 auto;">
-            <section id="regions">
-                <h2>Regions</h2>
-                <img src="../images/map-of-lysies.webp" alt="Map of the World of Lysies" style="width: 100%; max-width: 800px; display: block; margin: 0 auto;">
-                <h3>The Lysian Empire</h3>
-                <p>
-                    The Lysian Empire stretches across a large part of the known continent, from the western coast toward the great desert in the east.
-                    Its capital, Solskeld, lies far east within the Empire, close to the desert border.
-                </p>
+    <main>
+        <section id="regions">
+            <h2>Regions</h2>
+            <img src="../images/map-of-lysies.webp" alt="Map of the World of Lysies"
+                style="width: 100%; max-width: 800px; display: block; margin: 0 auto;">
+            <h3>The Lysian Empire</h3>
+            <p>
+                The Lysian Empire stretches across a large part of the known continent, from the western coast toward
+                the great desert in the east.
+                Its capital, Solskeld, lies far east within the Empire, close to the desert border.
+            </p>
 
-                <p>
-                    The Lysian Empire is ruled by an imperial family whose claim to the throne rests on direct descent from Lysies herself. 
-                    This lineage is believed to be physically marked by the family's distinctive golden-blond hair.
-                </p>
+            <p>
+                The Lysian Empire is ruled by an imperial family whose claim to the throne rests on direct descent from
+                Lysies herself.
+                This lineage is believed to be physically marked by the family's distinctive golden-blond hair.
+            </p>
 
-                <p>
-                    Only children of the reigning Emperor and Empress who inherit this golden hair are considered eligible to inherit the throne. 
-                    Because of this, succession does not always pass directly from parent to child. If no suitable heir is born,
-                    a close relative, such as a cousin from another branch of the imperial family, may instead be recognized as the next ruler.
-                </p>
+            <p>
+                Only children of the reigning Emperor and Empress who inherit this golden hair are considered eligible
+                to inherit the throne.
+                Because of this, succession does not always pass directly from parent to child. If no suitable heir is
+                born,
+                a close relative, such as a cousin from another branch of the imperial family, may instead be recognized
+                as the next ruler.
+            </p>
 
-                <p>
-                    Gender plays little role in imperial succession. 
-                    The legitimacy of descent from Lysies is considered more important than whether an heir is male or female,
-                    and both Emperors and Empresses may rule in their own right.
-                </p>
+            <p>
+                Gender plays little role in imperial succession.
+                The legitimacy of descent from Lysies is considered more important than whether an heir is male or
+                female,
+                and both Emperors and Empresses may rule in their own right.
+            </p>
 
-                <h3>The Western Desert Union</h3>
-                <p>
-                    East of the Lysian Empire lies an enormous desert that continues far
-                    beyond the area shown on most Lysian maps. The kingdoms nearest the
-                    Empire have joined together in the Western Desert Union.
-                </p>
+            <h3>The Western Desert Union</h3>
+            <p>
+                East of the Lysian Empire lies an enormous desert that continues far
+                beyond the area shown on most Lysian maps. The kingdoms nearest the
+                Empire have joined together in the Western Desert Union.
+            </p>
 
-                <p>
-                    The Union is not a single kingdom. Its member states retain their own rulers and considerable independence, 
-                    but share laws and cooperate politically as a larger regional power.
-                </p>
+            <p>
+                The Union is not a single kingdom. Its member states retain their own rulers and considerable
+                independence,
+                but share laws and cooperate politically as a larger regional power.
+            </p>
 
-                <h3>The Kalarie Islands</h3>
-                <p>
-                    The Kalarie Islands are an independent matriarchal kingdom off the western coast of Auropia. 
-                    Political inheritance and authority traditionally follow the female line, 
-                    placing women at the centre of the Kalarie monarchy and much of its political structure.
-                </p>
+            <h3>The Kalarie Islands</h3>
+            <p>
+                The Kalarie Islands are an independent matriarchal kingdom off the western coast of Auropia.
+                Political inheritance and authority traditionally follow the female line,
+                placing women at the centre of the Kalarie monarchy and much of its political structure.
+            </p>
 
-                <p>
-                    Geography has shaped Kalarie as much as tradition has. 
-                    Unlike the largely land-based infrastructure of the Lysian Empire, 
-                    travel and trade between the islands depend heavily on ships and maritime routes.
-                </p>
+            <p>
+                Geography has shaped Kalarie as much as tradition has.
+                Unlike the largely land-based infrastructure of the Lysian Empire,
+                travel and trade between the islands depend heavily on ships and maritime routes.
+            </p>
 
-                <p>
-                    Travel on land can be considerably more difficult. 
-                    Many of the islands are steep and rugged, making ordinary carts impractical in large areas. 
-                    Instead, the Kalarie make use of enormous branded aura beasts, 
-                    commonly large lizards and crocodilian creatures, as mounts and beasts of transport.
-                </p>
+            <p>
+                Travel on land can be considerably more difficult.
+                Many of the islands are steep and rugged, making ordinary carts impractical in large areas.
+                Instead, the Kalarie make use of enormous branded aura beasts,
+                commonly large lizards and crocodilian creatures, as mounts and beasts of transport.
+            </p>
 
-                <h3>The Southern Kingdoms</h3>
-                <p>
-                    South of the Empire lie several independent territories, including the Kingdom of Våd and Sydkøst. 
-                    Their cultures and political systems remain separate from imperial rule, 
-                    but are greatly impacted by it as they primarily rely on trade with the Lysian Empire.
-                </p>
-            </section>
+            <h3>The Southern Kingdoms</h3>
+            <p>
+                South of the Empire lie several independent territories, including the Kingdom of Våd and Sydkøst.
+                Their cultures and political systems remain separate from imperial rule,
+                but are greatly impacted by it as they primarily rely on trade with the Lysian Empire.
+            </p>
+        </section>
 
-            <section id="cities">
-                <h2>Cities</h2>
+        <section id="cities">
+            <h2>Cities</h2>
 
-                <h3>Solskeld</h3>
-                <p>
-                    Solskeld is the capital of the Lysian Empire and the seat of the imperial family. 
-                    Because of its eastern location near the desert, 
-                    the city has a noticeably warmer climate than the northern parts of the Empire.
-                </p>
+            <h3>Solskeld</h3>
+            <p>
+                Solskeld is the capital of the Lysian Empire and the seat of the imperial family.
+                Because of its eastern location near the desert,
+                the city has a noticeably warmer climate than the northern parts of the Empire.
+            </p>
 
-                <p>
-                    Ravnsund Manor lies only around 30 kilometres west of the capital,
-                    making it relatively close on the scale of the Empire.
-                </p>
+            <p>
+                Ravnsund Manor lies only around 30 kilometres west of the capital,
+                making it relatively close on the scale of the Empire.
+            </p>
 
-                <h3>The City of Lysies</h3>
-                <p>
-                    Far to the north, deep within a vast mountain range, lies the City of Lysies. 
-                    Although technically situated within the borders of the Empire, 
-                    it functions largely as an independent holy city-state.
-                </p>
+            <h3>The City of Lysies</h3>
+            <p>
+                Far to the north, deep within a vast mountain range, lies the City of Lysies.
+                Although technically situated within the borders of the Empire,
+                it functions largely as an independent holy city-state.
+            </p>
 
-                <p>
-                    The city is governed by a council of holy elders. 
-                    Many of them devote their lives to studying ancient scripture, collecting knowledge from travellers, 
-                    and preserving records in the city's immense underground library.
-                </p>
+            <p>
+                The city is governed by a council of holy elders.
+                Many of them devote their lives to studying ancient scripture, collecting knowledge from travellers,
+                and preserving records in the city's immense underground library.
+            </p>
 
-                <p>
-                    Lysies is also an important diplomatic centre. 
-                    Every six years, representatives from across the continent gather there for the Games,
-                    alongside political negotiations, trade agreements and other major diplomatic meetings.
-                </p>
+            <p>
+                Lysies is also an important diplomatic centre.
+                Every six years, representatives from across the continent gather there for the Games,
+                alongside political negotiations, trade agreements and other major diplomatic meetings.
+            </p>
 
-                <p> This gathering originally started as a religious festival, based around the legend of Lysies. 
-                    But also because the City is situated atop a vast aura spring which fules much of the empires aura-stone export.
-                </p>
-            </section>
-            <section id="politics">
-                <h2>Politics</h2>
+            <p> This gathering originally started as a religious festival, based around the legend of Lysies.
+                But also because the City is situated atop a vast aura spring which fules much of the empires aura-stone
+                export.
+            </p>
+        </section>
+        <section id="politics">
+            <h2>Politics</h2>
 
-                <h3>The Lysian Empire</h3>
-                <p>
-                    The imperial family sits at the centre of a large and influential nobility.
-                    Noble houses compete for political favour, advantageous marriages, trade agreements and influence over the future of the Empire, 
-                    while the throne must balance these internal interests with relations beyond its borders.
-                </p>
+            <h3>The Lysian Empire</h3>
+            <p>
+                The imperial family sits at the centre of a large and influential nobility.
+                Noble houses compete for political favour, advantageous marriages, trade agreements and influence over
+                the future of the Empire,
+                while the throne must balance these internal interests with relations beyond its borders.
+            </p>
 
 
-                <h3>The Kalarie Islands</h3>
-                <p>
-                    Kalarie culture places a strong emphasis on fairness, including in diplomacy, negotiation and trade. 
-                    However, what constitutes a fair agreement is understood through Kalarie customs and values, 
-                    which do not always align with those of the mainland nations. 
-                    As a result, Kalarie diplomats may consider an arrangement perfectly equitable even when their Lysian counterparts see it differently.
-                </p>
+            <h3>The Kalarie Islands</h3>
+            <p>
+                Kalarie culture places a strong emphasis on fairness, including in diplomacy, negotiation and trade.
+                However, what constitutes a fair agreement is understood through Kalarie customs and values,
+                which do not always align with those of the mainland nations.
+                As a result, Kalarie diplomats may consider an arrangement perfectly equitable even when their Lysian
+                counterparts see it differently.
+            </p>
 
-            </section>
+        </section>
 
-            <section id="culture">
-                <h2>Culture</h2>
-                <h3>The Legend of Lysies</h3>
-                <p>
-                    The Legend of Lysies tells of the First People who came to Auropia, 
-                    the continent on which the Lysian Empire and the surrounding nations now stand. 
-                    According to tradition, they arrived from a distant land remembered only as the Old World, somewhere far beyond the Great Western Sea. 
-                    No successful voyage back has ever been recorded, and over the centuries most knowledge of the Old World has been lost, 
-                    leaving it somewhere between history and legend.
-                    <br><br>
-                    When the First People arrived in Auropia, they struggled to survive in an unfamiliar and barren land. 
-                    During an unusually long winter that claimed most of their elders, a young woman became their leader. 
-                    Desperate to save what remained of her people, she ventured alone into the White Peaks,
-                    the great mountain range that today surrounds the City of Lysies, and disappeared into the storm.
-                    <br><br>
-                    Twelve nights later, she returned transformed. 
-                    Her hair shone like dawn, and a trail of golden light followed in her wake, melting the snow and bringing the first signs of spring. 
-                    She had discovered aura, the life-force that flows through the world, 
-                    and taught the First People how to sense and wield it for warmth, survival and cultivation.
-                    <br><br>
-                    From then on, she became known as Lysies, Bringer of Light. 
-                    Her return is still commemorated on the darkest night of winter, 
-                    when people walk together carrying candles and pass the flame from one person to the next, 
-                    recreating the trail of light that Lysies carried down from the mountains.
-                </p>
-                <h3>Significance of 12</h3>
-                <p>
-                    The number twelve holds particular importance in Lysian culture, appearing throughout religion, tradition and everyday life. 
-                    In the legend, Lysies returns to her people on the twelfth night, and the number has since become associated with completion, renewal and divine order.
-                    <br><br>
-                    This significance even appears in the way Lysians count. 
-                    Their number system is based on twelve rather than ten. 
-                    Instead of counting each finger individually, the thumb is used to count the three sections of each of the four fingers, 
-                    allowing a person to count to twelve on one hand and twenty-four across both.
-                </p>
-            </section>
-        </main>
+        <section id="culture">
+            <h2>Culture</h2>
+            <h3>The Legend of Lysies</h3>
+            <p>
+                The Legend of Lysies tells of the First People who came to Auropia,
+                the continent on which the Lysian Empire and the surrounding nations now stand.
+                According to tradition, they arrived from a distant land remembered only as the Old World, somewhere far
+                beyond the Great Western Sea.
+                No successful voyage back has ever been recorded, and over the centuries most knowledge of the Old World
+                has been lost,
+                leaving it somewhere between history and legend.
+                <br><br>
+                When the First People arrived in Auropia, they struggled to survive in an unfamiliar and barren land.
+                During an unusually long winter that claimed most of their elders, a young woman became their leader.
+                Desperate to save what remained of her people, she ventured alone into the White Peaks,
+                the great mountain range that today surrounds the City of Lysies, and disappeared into the storm.
+                <br><br>
+                Twelve nights later, she returned transformed.
+                Her hair shone like dawn, and a trail of golden light followed in her wake, melting the snow and
+                bringing the first signs of spring.
+                She had discovered aura, the life-force that flows through the world,
+                and taught the First People how to sense and wield it for warmth, survival and cultivation.
+                <br><br>
+                From then on, she became known as Lysies, Bringer of Light.
+                Her return is still commemorated on the darkest night of winter,
+                when people walk together carrying candles and pass the flame from one person to the next,
+                recreating the trail of light that Lysies carried down from the mountains.
+            </p>
+            <h3>Significance of 12</h3>
+            <p>
+                The number twelve holds particular importance in Lysian culture, appearing throughout religion,
+                tradition and everyday life.
+                In the legend, Lysies returns to her people on the twelfth night, and the number has since become
+                associated with completion, renewal and divine order.
+                <br><br>
+                This significance even appears in the way Lysians count.
+                Their number system is based on twelve rather than ten.
+                Instead of counting each finger individually, the thumb is used to count the three sections of each of
+                the four fingers,
+                allowing a person to count to twelve on one hand and twenty-four across both.
+            </p>
+        </section>
+    </main>
 
-        <div id="footer"></div>
-        <script> getFooter() </script>
-    </body>
+    <div id="footer"></div>
+    <script> getFooter() </script>
+</body>
+
 </html>

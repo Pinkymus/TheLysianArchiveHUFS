@@ -6,6 +6,7 @@ function getActiveNavigation(active_element) {
     fetch("/components/navigationbar.html")
         .then(response => response.text())
         .then(html => {
+            console.log(html)
             document.getElementById("navbar").innerHTML = html;
             document.getElementById(active_element).classList.add("active");
         });
@@ -37,7 +38,7 @@ async function getCharacterCards() {
 
     groups.forEach((characters, group) => {
         all_cards += `
-        <section>
+        <section id="${group}-characters">
             <h2>${group}</h2>
             ${characters.map(createCharacterCard).join("")}
         </section>

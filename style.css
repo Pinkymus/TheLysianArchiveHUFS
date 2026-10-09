@@ -1,44 +1,108 @@
 /* TODO: This file will be filled upon relevant submission
 
+            
+*/
+html {
+    scrollbar-gutter: stable;
+}
+
 * {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+}
+
+header h1 {
+    color: white;
+    padding: 20px 10% 20px 40%;
+    text-align: center;
+}
+
+body{
     color: #333;
-}
 
-.active {
-    font-weight: bold;
-    color: red;
-}
-
-section {
-    margin: 20px;
-    padding: 20px;
 }
 
 header {
     background-image: url('./images/banner-image-1.webp');
     background-size: cover;
     background-position: left;
-    height: 200px;
-    text-align: center;
+    height: 300px;
 }
 
-h1 {
-    color: white;
-    padding: 0;
-    margin: 0;
-} 
+main {
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-body {
-    background: linear-gradient(
-        to right,
-        #bbe7fc 0%,
-        #bbe7fc 10%,
-        #febb5e 30%,
-        #febb5e 100%
-        );
-    }
-        
-*/
+.character-card {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.character-card img {
+    max-width: 250px;
+    margin-right: 20px;
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.image-gallery img {
+    max-width: 100%;
+    max-height: 400px;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* NAV MENU */
+
+.nav-menu-button {
+    padding: 10px;
+    background-color: #febb5e;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-menu-button:hover {
+    background-color: #dd9551;
+}
+
+.nav-menu-button.active {
+    font-weight: bold;
+    color: red;
+}    
+
+.nav-dropdown {
+    display: inline-block;
+    color: white;
+    min-width: 80px;
+}
+
+.nav-dropdown-content {
+    display: none;
+}
+
+.nav-dropdown:hover .nav-dropdown-content{
+    display: block;
+}
+
+.nav-dropdown-content a {
+padding: 10px;
+text-decoration: none;
+display: block;
+}
+.nav-dropdown-content a:hover {
+background-color: #dd9551;
+}
