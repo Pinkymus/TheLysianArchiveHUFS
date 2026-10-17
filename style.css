@@ -27,41 +27,6 @@ html {
     scroll-margin-top: 35vh;
 }
 
-header {
-    background-image: 
-    url('./images/banner-image-1.webp');
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-    background-size: auto 300px;
-    background-repeat: no-repeat;
-    background-position: left;
-    height: 300px;
-    width: 100%;
-    background-color: var(--orange-primary);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-@font-face {
-    font-family: 'Highcrest';
-    src: url('/fonts/Highcrest.ttf') format('truetype');
-}
-
-.title {
-    width: 50%;
-    height: 50px;
-    padding: 80px 10% 0 40%;
-    text-align: center;
-}
-
-.title h1{
-    font-family: "Highcrest", serif;
-    font-size: 50px;
-    font-weight: lighter;
-    color: white;
-}
-
 body {
     color: #333;
 }
@@ -194,7 +159,7 @@ body > nav {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* NAV MENU */
+/* NAV MENU
 .nav-menu {
     justify-content: space-between;
     display: flex;
@@ -231,7 +196,6 @@ body > nav {
 .nav-menu-button.active {
     font-weight: bold;
     text-shadow: 0 0 8px white;
-    /* color: red; */
 }
 
 .nav-dropdown-content {
@@ -267,7 +231,7 @@ body > nav {
 
 .nav-dropdown-content:last-child a:hover {
     border-radius: 0 0 15px 15px;
-}
+} */
 
 
 /* HOME PAGE */

@@ -62,6 +62,37 @@ function generateUsername(element_id) {
         randomUsernames[randomIndex];
 }
 
+const pages = {
+    "/index.html": {
+        title: "The Lysian Archive",
+        active: "home-link"
+    },
+    "/pages/world.html": {
+        title: "The World of Lysies",
+        active: "world-link"
+    },
+    "/pages/magic.html": {
+        title: "Aura",
+        active: "magic-link"
+    },
+    "/pages/characters.html": {
+        title: "Characters from the Lysian Universe",
+        active: "characters-link"
+    },
+    "/pages/forums.html": {
+        title: "Forum",
+        active: "forums-link"
+    },
+    "/pages/community.html": {
+        title: "Forum",
+        active: "community-link"
+    },
+    "/pages/login.html": {
+        title: "Login",
+        active: "login-link"
+    }
+};
+
 async function loadData() {
     const [characters, posts] = await Promise.all([
         getData("/data/characters.json"),
@@ -93,50 +124,6 @@ window.addEventListener("scroll", () => {
     }
 });
 
-function getHeader(active_element) {
-    let page_title = "The Lysian Archive";
-    switch (active_element) {
-        case "home-link":
-            page_title = "The Lysian Archive";
-            break;
-        case "world-link":
-            page_title = "The World of Lysies"
-            break;
-        case "magic-link":
-            page_title = "Aura";
-            break;
-        case "characters-link":
-            page_title = "Characters from the Lysian Universe";
-            break;
-        case "community-link":
-            page_title = "The Lysian Archive";
-            break;
-        case "forums-link":
-            page_title = "Forum";
-            break;
-        case "login-link":
-            page_title = "Login"
-            break;
-    }
-    document.getElementById("header").innerHTML =
-        `
-        <div class="title">
-            <h1 id="page-title">${page_title}</h1>
-            <img src="/images/assets/ornament-3.svg" width="500px">
-        </div>
-        <div id="navbar"></div>
-    `;
-    getActiveNavigation(active_element)
-}
-
-function getActiveNavigation(active_element) {
-    fetch("/components/navigationbar.html")
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById("navbar").innerHTML = html;
-            document.getElementById(active_element).classList.add("active");
-        });
-}
 
 function getFooter() {
     fetch("/components/footer.html")
@@ -339,4 +326,57 @@ function initializeMagnifying() {
     magnifier.addEventListener("mouseleave", () => {
         glass.style.display = "none";
     });
+}
+
+/* Component getters */
+const component = {
+    header: "header",
+    navigationBar: "navigation_bar"
+}
+
+async function getHeader() {
+    await loadComponent(component.header);
+    renderHeader();
+}
+
+async function getNavigationBar() {
+    await loadComponent(component.navigationBar);
+    renderNavigationBar();
+}
+
+/* Helper Functions */
+const loadedComponents = new Map();
+
+function loadComponent(name) {
+    if (loadedComponents.has(name)) {
+        return loadedComponents.get(name);
+    }
+
+    /* Some components have funtionality in their respective .js file */
+    const scriptPromise = new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+
+        script.src = `/components/${name}/${name}.js`;
+        script.onload = resolve;
+        script.onerror = reject;
+
+        document.head.appendChild(script);
+    });
+
+    /* Component specific styling should be fetched */
+    const stylePromise = new Promise((resolve, reject) => {
+        const style = document.createElement("link");
+
+        style.href = `/components/${name}/${name}.css`;
+        style.rel = "stylesheet";
+        style.onload = resolve;
+        style.onerror = reject;
+
+        document.head.appendChild(style);
+    });
+
+    const promise = Promise.all([scriptPromise, stylePromise]);
+    loadedComponents.set(name, promise);
+
+    return promise;
 }
