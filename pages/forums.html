@@ -7,22 +7,13 @@
         <script src="../components.js"></script>
     </head>
     <body>
-         <header>
-            <h1>Forums</h1>
-            <div id="navbar"></div>
-            <script> getActiveNavigation("forums-link") </script>
+        <header id="header">
+            <script>getHeader("forums-link")</script>
         </header>
-
 
         <main>
             <div id="post-feed"></div>
-            <script>
-                fetch("/components/forum-post.html")
-                    .then(response => response.text())
-                    .then(html => {
-                        document.getElementById("post-feed").innerHTML = html;
-                    });
-            </script>
+            <script> initializeForum() </script>
         </main>
 
         <div id="footer"></div>

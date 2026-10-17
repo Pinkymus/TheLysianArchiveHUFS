@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 120" width="1000" height="120">
+    <g fill="none" stroke="#333" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+
+        <!-- Center ornament -->
+        <path d="
+            M 40 60
+            Q 45 58 68 52
+            Q 90 48 100 20
+            Q 110 48 132 52
+            Q 155 58 192 60
+            Q 155 62 132 68
+            Q 110 72 100 100
+            Q 90 72 68 68
+            Q 45 62 40 60
+        "></path>
+
+        <!-- Inner circle -->
+        <circle cx="210" cy="60" r="18"></circle>
+        <circle cx="240" cy="60" r="12"></circle>
+        <circle cx="258" cy="60" r="6"></circle>
+
+        <!-- Right connecting line -->
+        <path d="M 264 60 Q 750 58 880 60"></path>
+
+        <!-- Right ornament -->
+        <path d="
+            M 930 60
+            Q 912 58 905 51
+            Q 903 45 901 43
+            Q 900 49 893 53
+            Q 886 55 880 60
+            Q 886 65 893 67
+            Q 900 71 901 77
+            Q 903 75 905 69
+            Q 912 62 930 60
+        "></path>
+
+        <circle cx="936" cy="60" r="6"></circle>
+
+    </g>
+</svg>

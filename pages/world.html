@@ -2,32 +2,74 @@
 <html>
 
 <head>
-    <title>The World of Lysies</title>
+    <title>The Lysian Archive</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../style.css">
     <script src="/components.js"></script>
 </head>
 
-<body>
-    <header>
-        <h1>The World of Lysies</h1>
-        <div id="navbar"></div>
-        <script> getActiveNavigation("world-link")</script>
+<body class="world-page-background">
+    <header id="header">
+        <script>getHeader("world-link")</script>
     </header>
 
 
     <main>
-        <section id="regions">
-            <h2>Regions</h2>
-            <img src="../images/map-of-lysies.webp" alt="Map of the World of Lysies"
-                style="width: 100%; max-width: 800px; display: block; margin: 0 auto;">
-            <h3>The Lysian Empire</h3>
-            <p>
-                The Lysian Empire stretches across a large part of the known continent, from the western coast toward
+        <section id="regions" class="main-section" style="padding: 0;">
+            <h2 style="padding: 20px;">Regions</h2>
+            <div class="magnifier">
+                <img src="/images/map-of-lysies.webp" alt="Map of the World of Lysies" style="width: 100%; display: block;">
+                <div class="magnifier-glass"></div>
+                <a class="magnifier-area-of-interest" 
+                    style="top: 32%; right: 22.5%;"
+                    href="#solskeld"
+                    title="Solskeld"
+                ></a>
+                <a class="magnifier-area-of-interest" 
+                    style="top: 43%; left: 4%;"
+                    href="#kalarie-islands"
+                    title="The Kalarie Islands"
+                ></a>
+                <a class="magnifier-area-of-interest" 
+                    style="top: 2%; right: 42.5%;"
+                    href="#city-of-lysies"
+                ></a>
+                <a class="magnifier-area-of-interest"
+                    style="top: 35%; left: 46%;"
+                    href="#lysian-empire"
+                    title="The Lysian Empire"
+                ></a>
+                <a class="magnifier-area-of-interest"
+                    style="top: 25%; right: 10%;"
+                    href="#western-desert-union"
+                    title="The Western Desert Union"
+                ></a>
+                <a class="magnifier-area-of-interest"
+                    style="top: 68%; left: 35%;"
+                    href="#southern-kingdoms"
+                    title="Kingdom of Våd"
+                ></a>
+                <a class="magnifier-area-of-interest"
+                    style="top: 75.5%; left: 64%;"
+                    href="#southern-kingdoms"
+                    title="Sydkøst"
+                ></a>
+                <a class="magnifier-area-of-interest"
+                    style="top: 36%; right: 26%;"
+                    href="#ravnsund-manor"
+                    title="Ravnsund Manor"
+                ></a>
+            </div>
+            <script defer>initializeMagnifying()</script>
+            <div style="padding: 20px;">
+
+                <h3 id="lysian-empire">The Lysian Empire</h3>
+                <p>
+                    The Lysian Empire stretches across a large part of the known continent, from the western coast toward
                 the great desert in the east.
                 Its capital, Solskeld, lies far east within the Empire, close to the desert border.
             </p>
-
+            
             <p>
                 The Lysian Empire is ruled by an imperial family whose claim to the throne rests on direct descent from
                 Lysies herself.
@@ -42,71 +84,72 @@
                 a close relative, such as a cousin from another branch of the imperial family, may instead be recognized
                 as the next ruler.
             </p>
-
+            
             <p>
                 Gender plays little role in imperial succession.
                 The legitimacy of descent from Lysies is considered more important than whether an heir is male or
                 female,
                 and both Emperors and Empresses may rule in their own right.
             </p>
-
-            <h3>The Western Desert Union</h3>
+            
+            <h3 id="western-desert-union">The Western Desert Union</h3>
             <p>
                 East of the Lysian Empire lies an enormous desert that continues far
                 beyond the area shown on most Lysian maps. The kingdoms nearest the
                 Empire have joined together in the Western Desert Union.
             </p>
-
+            
             <p>
                 The Union is not a single kingdom. Its member states retain their own rulers and considerable
                 independence,
                 but share laws and cooperate politically as a larger regional power.
             </p>
-
-            <h3>The Kalarie Islands</h3>
+            
+            <h3 id="kalarie-islands">The Kalarie Islands</h3>
             <p>
                 The Kalarie Islands are an independent matriarchal kingdom off the western coast of Auropia.
                 Political inheritance and authority traditionally follow the female line,
                 placing women at the centre of the Kalarie monarchy and much of its political structure.
             </p>
-
+            
             <p>
                 Geography has shaped Kalarie as much as tradition has.
                 Unlike the largely land-based infrastructure of the Lysian Empire,
                 travel and trade between the islands depend heavily on ships and maritime routes.
             </p>
-
+            
             <p>
                 Travel on land can be considerably more difficult.
                 Many of the islands are steep and rugged, making ordinary carts impractical in large areas.
                 Instead, the Kalarie make use of enormous branded aura beasts,
                 commonly large lizards and crocodilian creatures, as mounts and beasts of transport.
             </p>
-
-            <h3>The Southern Kingdoms</h3>
+            
+            <h3 id="southern-kingdoms">The Southern Kingdoms</h3>
             <p>
                 South of the Empire lie several independent territories, including the Kingdom of Våd and Sydkøst.
                 Their cultures and political systems remain separate from imperial rule,
                 but are greatly impacted by it as they primarily rely on trade with the Lysian Empire.
             </p>
+            </div>
         </section>
 
-        <section id="cities">
+        <section id="cities" class="main-section">
             <h2>Cities</h2>
 
-            <h3>Solskeld</h3>
+            <h3 id="solskeld">Solskeld - <span class="lysian">Solskeld</span></h3>
             <p>
                 Solskeld is the capital of the Lysian Empire and the seat of the imperial family.
                 Because of its eastern location near the desert,
                 the city has a noticeably warmer climate than the northern parts of the Empire.
             </p>
 
-            <p>
+            <p id="ravnsund-manor">
                 Ravnsund Manor lies only around 30 kilometres west of the capital,
                 making it relatively close on the scale of the Empire.
             </p>
 
-            <h3>The City of Lysies</h3>
+            <h3 id="city-of-lysies">The City of Lysies</h3>
             <p>
                 Far to the north, deep within a vast mountain range, lies the City of Lysies.
                 Although technically situated within the borders of the Empire,
@@ -130,7 +173,7 @@
                 export.
             </p>
         </section>
-        <section id="politics">
+        <section id="politics" class="main-section">
             <h2>Politics</h2>
 
             <h3>The Lysian Empire</h3>
@@ -153,7 +196,7 @@
 
         </section>
 
-        <section id="culture">
+        <section id="culture" class="main-section">
             <h2>Culture</h2>
             <h3>The Legend of Lysies</h3>
             <p>
@@ -181,7 +224,7 @@
                 when people walk together carrying candles and pass the flame from one person to the next,
                 recreating the trail of light that Lysies carried down from the mountains.
             </p>
-            <h3>Significance of 12</h3>
+            <h3>Significance of 12 <span class="base12">(10)</span></h3>
             <p>
                 The number twelve holds particular importance in Lysian culture, appearing throughout religion,
                 tradition and everyday life.
@@ -190,6 +233,9 @@
                 <br><br>
                 This significance even appears in the way Lysians count.
                 Their number system is based on twelve rather than ten.
+            </p>
+            <p class="base12" style="text-align: center;">0 1 2 3 4 5 6 7 8 9 A B</p>
+            <p>
                 Instead of counting each finger individually, the thumb is used to count the three sections of each of
                 the four fingers,
                 allowing a person to count to twelve on one hand and twenty-four across both.

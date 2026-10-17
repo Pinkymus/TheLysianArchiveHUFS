@@ -1,0 +1,116 @@
+{
+    "posts": [
+        {
+            "id": 0,
+            "title": "Chapter 45 discussion!",
+            "poster": "Hannah",
+            "content": [
+                "Thank you for the amazing chapter! Seems like it's finally happening! Kat has been sold. Now I only wonder if she will go to Leo directly or (more likely in my opinion) go to a different Noble first and later be gifted to him. Can't wait to find out!"
+            ],
+            "img": "",
+            "likes": 12,
+            "date": "2025-04-23T18:25:43.511Z",
+            "comments": [
+                {
+                    "id": 0,
+                    "poster": "Pinkymus",
+                    "content": "It won't be long now! I can't wait to hear if you like the way I handle the ending (and also be a little scared that you won't like it... 😅)",
+                    "likes": 5,
+                    "date": "2025-04-23T19:27:43.511Z"
+                },
+                {
+                    "id": 1,
+                    "poster": "Ale123",
+                    "content": "Oh, is it almost over?",
+                    "likes": 2,
+                    "date": "2025-04-24T10:05:43.511Z"
+                },
+                {
+                    "id": 2,
+                    "poster": "Pinkymus",
+                    "content": "Yes, book 1 is coming to a close soon, however the story itself is nowhere near over! I'm not entirely sure how long the whole story could become, but there will be a second book. I am looking to go back and implement the feedback I have gotten on this book before continuing though :D So there will be a little break, but don't worry, I will post all the info along with the final chapter of book 1.",
+                    "likes": 7,
+                    "date": "2025-04-28T17:12:43.511Z"
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "title": "Am I the only one who doesn't trust Leopold?",
+            "poster": "BookWyrm42",
+            "content": [
+                "Okay, I know Leo is supposed to be one of the main characters, but am I seriously the only one getting major red flags from this guy?? 😂 Like sure, he has helped Kat a few times, but he also seems to treat everything like some elaborate game. And the fact that he can literally read people's minds makes it so much worse!",
+                "I honestly can't tell if he actually cares about Katharina or if he's just fascinated by the fact that he can't understand her thoughts. Either way, I'm really curious where their relationship is going. What do you guys think?"
+            ],
+            "img": "",
+            "likes": 27,
+            "date": "2025-04-25T14:12:00.000Z",
+            "comments": [
+                {
+                    "id": 0,
+                    "poster": "StarryReader",
+                    "content": "THANK YOU!! Everyone seems to love him but I would be absolutely terrified of that man. The power imbalance is insane.",
+                    "likes": 9,
+                    "date": "2025-04-25T15:34:12.000Z"
+                },
+                {
+                    "id": 1,
+                    "poster": "LeoApologist",
+                    "content": "Look I'm not saying he's a good person, I'm just saying he's an INTERESTING person 👀",
+                    "likes": 15,
+                    "date": "2025-04-25T17:18:45.000Z"
+                },
+                {
+                    "id": 2,
+                    "poster": "Pinkymus",
+                    "content": "I love reading all your theories! :D Without spoiling anything, I will say that I never intended for Leopold to be an entirely good or bad person. He has his own motivations, and whether those align with Katharina's is another question entirely. Really excited for you guys to see what happens next!",
+                    "likes": 11,
+                    "date": "2025-04-26T10:42:21.000Z"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Something doesn't add up about Kat's aura...",
+            "poster": "CuriousCrow",
+            "content": [
+                "So I've been thinking about this since the mountain chapters. We know that Kat has barely any aura of her own, but she keeps managing to do things that shouldn't really be possible for someone at her level.",
+                "Remember when Leo cleared the path through the mountains? What if Kat isn't actually weak, but just doesn't understand how to use her abilities yet? Or maybe being from Earth has something to do with it?",
+                "I might be completely overthinking this lol, but I feel like the author is setting something up here."
+            ],
+            "img": "",
+            "likes": 34,
+            "date": "2025-04-27T09:45:00.000Z",
+            "comments": [
+                {
+                    "id": 0,
+                    "poster": "Ale123",
+                    "content": "I thought the same thing!! Especially with how she approaches aura almost like a science experiment. Maybe everyone else is just too stuck in their traditional way of thinking?",
+                    "likes": 8,
+                    "date": "2025-04-27T11:23:18.000Z"
+                },
+                {
+                    "id": 1,
+                    "poster": "SleepyDragon",
+                    "content": "My theory is that she can somehow borrow aura from other people. Would explain a LOT actually.",
+                    "likes": 13,
+                    "date": "2025-04-27T14:56:32.000Z"
+                },
+                {
+                    "id": 2,
+                    "poster": "CuriousCrow",
+                    "content": "WAIT that actually makes so much sense. Imagine if she figures out how to use Leopold's aura against him 😂",
+                    "likes": 6,
+                    "date": "2025-04-27T15:12:07.000Z"
+                },
+                {
+                    "id": 3,
+                    "poster": "Pinkymus",
+                    "content": "Ohhh I love seeing you guys trying to figure out the aura system! Some very interesting theories in here 👀 I obviously can't confirm or deny anything, but I can say that Kat's unusual approach to aura is definitely intentional. Keep theorizing! :D",
+                    "likes": 10,
+                    "date": "2025-04-28T09:37:54.000Z"
+                }
+            ]
+        }
+    ]
+}

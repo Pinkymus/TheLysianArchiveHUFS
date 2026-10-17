@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>The Lysian Archive</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="../style.css">
-        <script src="/components.js"></script>
-    </head>
-    <body>
-        <header>
-            <h1>Characters from the Lysian Universe</h1>
-            <div id="navbar"></div>
-            <script> getActiveNavigation("characters-link")
+
+<head>
+    <title>The Lysian Archive</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <script src="/components.js"></script>
+</head>
+
+<body>
+    <div class="character-page-background">
+        <p style="height: 300px;"></p>
+        <div style="background-image: url('/images/characters/katharina.webp')"></div>
+        <div style="background-image: url('/images/characters/leopold.webp')"></div>
+        <div style="background-image: url('/images/characters/alfred.webp')"></div>
+        <div style="background-image: url('/images/characters/deliah.webp')"></div>
+        <div style="background-image: url('/images/characters/deliah-2.webp')"></div>
+        <div style="background-image: url('/images/characters/sabuh.webp')"></div>
+    </div>
+    <header id="header">
+        <script>getHeader("characters-link")</script>
+    </header>
+
+    <main>
+        <div id="characters-display">
+            <script>
+                initializeCharacterCards()
             </script>
-        </header>
+        </div>
+    </main>
 
-        <main>
-            <div id="characters-display">
-                <script>
-                    getCharacterCards()
-                </script>
-            </div>
-        </main>
+    <div id="footer"></div>
+    <script> getFooter() </script>
+</body>
 
-        <div id="footer"></div>
-        <script> getFooter() </script>
-    </body>
 </html>

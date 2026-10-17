@@ -9,15 +9,14 @@
 </head>
 
 <body>
-    <header>
-        <h1>Characters from the Lysian Universe</h1>
-        <div id="navbar"></div>
-        <script> getActiveNavigation("home-link")</script>
+    <header id="header">
+        <script>getHeader("home-link")</script>
     </header>
 
-    <main style="min-height: 500px">
-        <section>
-            <h2>Welcome to The Lysian Archive</h2>
+    <main>
+        <section class="welcome-section">
+            <h3>Welcome to</h3>
+            <h2>The Lysian Archive</h2>
 
             <p>
                 The Lysian Archive is a guide to the world of <em>Kat & Leo</em>,
@@ -28,6 +27,85 @@
                 Explore the world, learn about its magic, meet the characters,
                 or visit the community pages.
             </p>
+            <a class="explore-button" href="/pages/world.html">Begin Exploring &rarr;</a>
+        </section>
+
+        <section class="explore-section-container">
+            <article class="explore-section-card">
+                <div class="explore-section-img" style="background-image: url('/images/banner-image-9.webp');
+                    background-position: center 25%;">
+                </div>
+
+                <div class="explore-section-text">
+                    <h2>The World</h2>
+                    <p>Explore the nations, cities and history of Lysies.</p>
+                    <div>
+                        <a href="/pages/world.html" class="small-explore-button">Explore the World &rarr;</a>
+                    </div>
+                </div>
+            </article>
+            <article class="explore-section-card">
+                <div class="explore-section-img" style="background-image: url('/images/banner-image-5.webp');
+                    background-position: center 25%;">
+                </div>
+
+                <div class="explore-section-text">
+                    <h2>The Magic</h2>
+                    <p>Explore the aura that permiates through the Lysian Empire.</p>
+                    <div>
+                        <a href="/pages/magic.html" class="small-explore-button">Explore the Aura &rarr;</a>
+                    </div>
+                </div>
+            </article>
+            <article class="explore-section-card">
+                <div class="explore-section-img" style="background-image: url('/images/banner-image-10.webp');
+                    background-position: center 25%;">
+                </div>
+
+                <div class="explore-section-text">
+                    <h2>The Characters</h2>
+                    <p>Meet all major characters from the Kat & Leo book.</p>
+                    <div>
+                        <a href="/pages/characters.html" class="small-explore-button">Explore the Characters &rarr;</a>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section id="meet-the-cast" class="meet-the-cast-container">
+            <div class="meet-the-cast-header">
+                <h2>Meet The Cast</h2>
+                <!-- <img src="images/assets/ornament-5.svg" width="40%"> -->
+                <!-- <div style="width: 20%;"></div> -->
+                <div style="width: 60%; border-top: 2px rgba(0,0,0,0.2) solid;"></div>
+                <a href="/pages/characters.html">View all characters &rarr;</a>
+            </div>
+            <div class="meet-the-cast-carousel">
+                <a class="cast-card" href="pages/characters.html#Katharina-card">
+                    <div></div>
+                    <h3>Katharina</h3>
+                </a>
+                <a class="cast-card" href="pages/characters.html#Leopold-card">
+                    <div></div>
+                    <h3>Leopold</h3>
+                </a>
+                <a class="cast-card" href="pages/characters.html#Deliah-card">
+                    <div></div>
+                    <h3>Deliah</h3>
+                </a>
+                <a class="cast-card" href="pages/characters.html#Prince Alfred-card">
+                    <div></div>
+                    <h3>Alfred</h3>
+                </a>
+                <a class="cast-card" href="pages/characters.html#Sabuh-card">
+                    <div></div>
+                    <h3>Sabuh</h3>
+                </a>
+                <a class="cast-card" href="pages/characters.html#Lian-card">
+                    <div></div>
+                    <h3>Lian</h3>
+                </a>
+            </div>
         </section>
     </main>
 

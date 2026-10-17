@@ -1,44 +1,32 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Aura Magic</title>
+        <title>The Lysian Archive</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../style.css">
         <script src="/components.js"></script>
     </head>
     <body>
-        <header>
-            <h1>Aura</h1>
-            <div id="navbar"></div>
-            <script>
-                fetch("../components/navigationbar.html")
-                    .then(response => response.text())
-                    .then(html => {
-                        document.getElementById("navbar").innerHTML = html;
-                        document.getElementById("magic-link").classList.add("active");
-                    });
-            </script>
+        <header id="header">
+            <script>getHeader("magic-link")</script>
         </header>
 
-
         <main>
-            <section id="aura">
+            <section id="aura" class="main-section">
                 <h2>Aura</h2>
 
                 <p>
-                    Aura is an energy possessed by living creatures in Auropia.
+                    Aura (<span class="lysian">Aura</span>) is an energy possessed by living creatures in Auropia.
                     A person's ability to use aura depends on both their natural capacity and their learned control.
                 </p>
 
-                <br>
                 <h3>Levels of Aura Control</h3>
 
                 <p>
                     Within the Lysian Empire, aura control is traditionally divided
                     into five levels.
                 </p>
-                <br>
-                <ol>
+                <ol class="aura-levels">
                     <li><strong>Inward</strong> &rarr; Control of aura within the body.</li>
                     <li><strong>Outward</strong> &rarr; Using aura to affect objects when in direct contact.</li>
                     <li><strong>Projective</strong> &rarr; Projecting aura beyond the body.</li>
@@ -60,7 +48,7 @@
                 </p>
             </section>
 
-            <section id="brands">
+            <section id="brands" class="main-section">
                 <h2>Brands</h2>
 
                 <p>
@@ -76,7 +64,7 @@
             </section>
 
 
-            <section id="stones">
+            <section id="stones" class="main-section">
                 <h2>Aura Stones</h2>
 
                 <p>

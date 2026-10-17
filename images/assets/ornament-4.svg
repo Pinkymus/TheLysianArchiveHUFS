@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 120" width="1000" height="120">
+    <g fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+
+        <!-- Left ornament -->
+        <path d="
+            M 20 60
+            Q 55 55 70 42
+            Q 73 30 78 25
+            Q 79 38 95 45
+            Q 108 50 118 60
+            Q 108 70 95 75
+            Q 79 82 78 95
+            Q 73 90 70 78
+            Q 55 65 20 60
+        "></path>
+
+        <!-- Left connecting line -->
+        <path d="M 118 60 Q 250 58 390 60"></path>
+
+        <!-- Center ornament -->
+        <path d="
+            M 390 60
+            Q 445 58 468 52
+            Q 490 48 500 20
+            Q 510 48 532 52
+            Q 555 58 610 60
+            Q 555 62 532 68
+            Q 510 72 500 100
+            Q 490 72 468 68
+            Q 445 62 390 60
+        "></path>
+
+        <!-- Inner circle -->
+        <circle cx="500" cy="60" r="18"></circle>
+
+        <!-- Right connecting line -->
+        <path d="M 610 60 Q 750 58 882 60"></path>
+
+        <!-- Right ornament -->
+        <path d="
+            M 980 60
+            Q 945 55 930 42
+            Q 927 30 922 25
+            Q 921 38 905 45
+            Q 892 50 882 60
+            Q 892 70 905 75
+            Q 921 82 922 95
+            Q 927 90 930 78
+            Q 945 65 980 60
+        "></path>
+
+    </g>
+</svg>

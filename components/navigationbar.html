@@ -1,12 +1,13 @@
 <nav>
-    <div
-        style="justify-content: space-between; display: flex; align-items: top; margin: 0 10% 0 40%; background-color: #febb5e;">
+    <div class="nav-menu">
 
-        <a href="/index.html">
-            <div id="home-link" class="nav-menu-button">
-                Home
-            </div>
-        </a>
+        <div class="nav-dropdown">
+            <a href="/index.html">
+                <div id="home-link" class="nav-menu-button">
+                    Home
+                </div>
+            </a>
+        </div>
 
         <!-- World dropdown -->
         <div class="nav-dropdown">
@@ -44,7 +45,7 @@
                     Characters
                 </div>
             </a>
-            <div class="nav-dropdown-content">
+            <div class="nav-dropdown-content" style="min-width: 170px;">
                 <a href="/pages/characters.html#Earth-characters">Earth</a>
                 <a href="/pages/characters.html#The Imperial Family-characters">The Imperial Family</a>
                 <a href="/pages/characters.html#Companions-characters">Katharina's Companions</a>
@@ -59,21 +60,26 @@
                     Community
                 </div>
             </a>
-            <div class="nav-dropdown-content">
+            <div class="nav-dropdown-content" style="min-width: 120px;">
                 <a href="/pages/community.html#fanart">Fanart</a>
                 <a href="/pages/community.html#member-content">&star; Exclusive</a>
-                <a href="/pages/magic.html#brands">Brands</a>
             </div>
         </div>
 
-        <a href="/pages/forums.html">
-            <div id="forums-link" class="nav-menu-button">
-                Forums
-            </div>
-        </a>
+        <div class="nav-dropdown">
+            <a href="/pages/forums.html">
+                <div id="forums-link" class="nav-menu-button">
+                    Forums
+                </div>
+            </a>
+        </div>
 
-        <div class="nav-menu-button">
-            <a id="login-link" href="/pages/login.html">Login</a>
+        <div class="nav-dropdown">
+            <a href="/pages/login.html">
+                <div id="login-link" class="nav-menu-button">
+                    Login
+                </div>
+            </a>
         </div>
 
     </div>
