@@ -1,40 +1,71 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>The Lysian Archive</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="../style.css">
-        <script src="/components.js"></script>
-    </head>
-    <body>
-        <header id="header">
-            <script>getHeader()</script>
-        </header>
 
-        <main>
-            <section id="aura" class="main-section">
-                <h2>Aura</h2>
+<head>
+    <title>The Lysian Archive</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/common-styles/backgrounds.css">
+    <script src="/components.js"></script>
+</head>
 
-                <p>
-                    Aura (<span class="lysian">Aura</span>) is an energy possessed by living creatures in Auropia.
-                    A person's ability to use aura depends on both their natural capacity and their learned control.
-                </p>
+<body>
+    <header id="header">
+        <script>getHeader()</script>
+    </header>
 
-                <h3>Levels of Aura Control</h3>
+    <main>
+        <section class="welcome-section" style='
+        background-image:
+        linear-gradient(
+            to right,
+            white 0%,
+            white 30%,
+            transparent 60%
+        ),
+        url("/images/banner-image-11.webp");
 
-                <p>
-                    Within the Lysian Empire, aura control is traditionally divided
-                    into five levels.
-                </p>
-                <ol class="aura-levels">
-                    <li><strong>Inward</strong> &rarr; Control of aura within the body.</li>
-                    <li><strong>Outward</strong> &rarr; Using aura to affect objects when in direct contact.</li>
-                    <li><strong>Projective</strong> &rarr; Projecting aura beyond the body.</li>
-                    <li><strong>Extractive</strong> &rarr; Drawing aura from others.</li>
-                    <li><strong>Transcendental</strong> &rarr; Rare, highly individual abilities.</li>
-                </ol>
-                <br>
-                <h3>Aura and Biology</h3>
+        background-size:
+        100% 100%,
+        80% auto;
+
+        background-position:
+        center,
+        right -30% top 40%;
+
+        --decoration-origin: top center;
+        --decoration-image: url("/images/assets/Aura-Swirl.png");
+        --decoration-rotation: 20deg;
+        --decoration-rotation-end: 15deg;
+        --decoration-left: 50px;
+        --decoration-top: 40px;
+        --decoration-width: 600px;
+        --decoration-height: 600px;
+        '>
+            <h2>Aura</h2>
+            <h3>The unseen force that shapes Auropia.</h3>
+            <p>
+                Aura (<span class="lysian">Aura</span>) is an energy possessed by living creatures in Auropia.
+                A person's ability to use aura depends on both their natural capacity and their learned control.
+            </p>
+
+            <p>
+                It flows through the body, connects to the world around it, and forms much of the Lysian society;
+                from healing and craftmansship to power and politics.
+            </p>
+        </section>
+
+        <section id="aura-levels" class="main-section">
+            <script>getAuraLevels()</script>
+        </section>
+
+        <div class="container carousel">
+            <section id="aura-biology" class="main-section half-background" 
+            style="flex: 2;
+            --background-image: url(/images/banner-image-8.webp);
+            --x: 200px
+            ">
+                <h2>Aura and Biology</h2>
 
                 <p>
                     The ability to develop aura is an inherited biological trait,
@@ -42,13 +73,14 @@
                 </p>
 
                 <p>
-                    Aura users also release aura into their surroundings. 
-                    Over time, this creates a feedback loop where aura-rich environments produce more aura users, 
+                    Aura users also release aura into their surroundings.
+                    Over time, this creates a feedback loop where aura-rich environments produce more aura users,
                     who then make the environment even richer in aura.
                 </p>
             </section>
-
-            <section id="brands" class="main-section">
+            <section id="brands" class="main-section full-background-dark"
+            style="--background-image: url(/images/banner-image-12.webp)"
+            >
                 <h2>Brands</h2>
 
                 <p>
@@ -57,28 +89,29 @@
                 </p>
 
                 <p>
-                    Brands are powered by the branded person's own aura. 
+                    Brands are powered by the branded person's own aura.
                     Because of this, suppressing the flow of aura can weaken a brand's influence,
                     although doing so for too long can be dangerous.
                 </p>
             </section>
+        </div>
+        <section id="stones" class="main-section">
+            <h2>Aura Stones</h2>
 
+            <p>
+                Aura stones are gemstones whose crystal structures allow them to carry and interact with aura.
+            </p>
 
-            <section id="stones" class="main-section">
-                <h2>Aura Stones</h2>
+            <p>
+                They can be used in their natural form or engraved with runes that guide the way aura flows through
+                them.
+                Stones with regular, well-ordered crystal structures are generally the most suitable.
+            </p>
+        </section>
+    </main>
 
-                <p>
-                    Aura stones are gemstones whose crystal structures allow them to carry and interact with aura.
-                </p>
+    <div id="footer"></div>
+    <script> getFooter() </script>
+</body>
 
-                <p>
-                    They can be used in their natural form or engraved with runes that guide the way aura flows through them. 
-                    Stones with regular, well-ordered crystal structures are generally the most suitable.
-                </p>
-            </section>
-        </main>
-
-        <div id="footer"></div>
-        <script> getFooter() </script>
-    </body>
 </html>

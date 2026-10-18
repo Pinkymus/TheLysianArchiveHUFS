@@ -124,15 +124,6 @@ window.addEventListener("scroll", () => {
     }
 });
 
-
-function getFooter() {
-    fetch("/components/footer.html")
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById("footer").innerHTML = html;
-        });
-}
-
 // CHARACTER STUFF
 async function initializeCharacterCards() {
     await loadData();
@@ -331,7 +322,9 @@ function initializeMagnifying() {
 /* Component getters */
 const component = {
     header: "header",
-    navigationBar: "navigation_bar"
+    navigationBar: "navigation_bar",
+    footer: "footer",
+    auraLevels: "aura_levels"
 }
 
 async function getHeader() {
@@ -342,6 +335,16 @@ async function getHeader() {
 async function getNavigationBar() {
     await loadComponent(component.navigationBar);
     renderNavigationBar();
+}
+
+async function getFooter() {
+    await loadComponent(component.footer);
+    renderFooter();
+}
+
+async function getAuraLevels() {
+    await loadComponent(component.auraLevels);
+    renderAuraLevelCard();
 }
 
 /* Helper Functions */
@@ -380,3 +383,73 @@ function loadComponent(name) {
 
     return promise;
 }
+
+
+
+async function initializeFullBackgrounds() {
+    /* This method was written with the help of AI */
+    const sections = document.querySelectorAll(".full-background");
+
+    for (const section of sections) {
+        const background = getComputedStyle(section)
+            .getPropertyValue("--background-image")
+            .trim();
+
+        const url = background.match(/url\(["']?(.*?)["']?\)/)?.[1];
+
+        if (!url) continue;
+
+        const image = new Image();
+        image.src = url;
+
+        try {
+            await image.decode();
+
+            const canvas = document.createElement("canvas");
+            canvas.width = 50;
+            canvas.height = 50;
+
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(image, 0, 0, 50, 50);
+
+            const pixels = ctx.getImageData(0, 0, 50, 50).data;
+
+            let brightness = 0;
+
+            for (let i = 0; i < pixels.length; i += 4) {
+                brightness +=
+                    pixels[i] * 0.2126 +
+                    pixels[i + 1] * 0.7152 +
+                    pixels[i + 2] * 0.0722;
+            }
+
+            brightness /= pixels.length / 4;
+
+            if (brightness > 127) {
+                section.style.setProperty("--text-color", "black");
+                section.style.setProperty("--shadow-color", "white");
+                section.style.setProperty(
+                    "--overlay-color",
+                    "rgba(255,255,255,0.5)"
+                );
+            } else {
+                section.style.setProperty("--text-color", "white");
+                section.style.setProperty("--shadow-color", "#333");
+                section.style.setProperty(
+                    "--overlay-color",
+                    "rgba(0,0,0,0.35)"
+                );
+            }
+
+        } catch (error) {
+            console.warn("Could not analyze background:", url, error);
+        }
+    }
+}
+
+document.addEventListener("DOMContentLoaded", initializeFullBackgrounds);
+
+const button_styles = document.createElement("link");
+button_styles.href = `/common-styles/buttons.css`;
+button_styles.rel = "stylesheet";
+document.head.appendChild(button_styles);

@@ -26,11 +26,11 @@
                         <input type="password" id="password" name="password" placeholder=" " required>
                         <label for="password">Password</label>
                     </div>
-                    <input type="submit" value="Login">
-                    <input type="reset" value="Cancel">
+                    <input class="basic" type="submit" value="Login">
+                    <input class="basic" type="reset" value="Cancel">
                 </form>
             </div>
-            <button id="show-sign-up" onclick="
+            <button class="basic" id="show-sign-up" onclick="
                     document.getElementById('sign-up').classList.remove('hidden');
                     document.getElementById('show-login').classList.remove('hidden');
                     document.getElementById('login').classList.add('hidden');
@@ -66,10 +66,10 @@
                     <!-- There should be a check that these two passwords are identical -->
                     <!-- This is to ensure the user has not made an error while typing -->
 
-                    <input type="submit" value="Register">
-                    <input type="reset" value="Cancel">
+                    <input class="basic" type="submit" value="Register">
+                    <input class="basic" type="reset" value="Cancel">
                 </form>
-                <button id="show-login" onclick="
+                <button class="basic" id="show-login" onclick="
                     document.getElementById('sign-up').classList.add('hidden');
                     document.getElementById('show-login').classList.add('hidden');
                     document.getElementById('login').classList.remove('hidden');

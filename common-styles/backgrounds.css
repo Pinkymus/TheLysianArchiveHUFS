@@ -1,0 +1,147 @@
+.half-background {
+    background-image:
+        linear-gradient(to right,
+            white 0%,
+            white 30%,
+            transparent 60%),
+        var(--background-image,
+            url("/images/banner-image-4.webp"));
+    ;
+
+    background-size:
+        100% 100%,
+        var(--size, cover);
+
+    background-position:
+        center,
+        var(--x, 50%) var(--y, 50%);
+
+    background-repeat: no-repeat;
+}
+
+.half-background>* {
+    width: 30%;
+    text-align: left;
+}
+
+.half-background-right {
+    background-image:
+        linear-gradient(to left,
+            white 0%,
+            white 30%,
+            transparent 60%),
+        var(--background-image,
+            url("/images/banner-image-4.webp"));
+    ;
+
+    background-size:
+        100% 100%,
+        auto 1200px;
+
+    background-position:
+        center,
+        left -250px top 20%;
+
+    background-repeat: no-repeat;
+}
+
+.half-background-right>* {
+    width: 30%;
+    margin-left: auto;
+    text-align: right;
+}
+
+
+.full-background-dynamic {
+    background-image:
+        linear-gradient(var(--overlay-color, transparent),
+            var(--overlay-color, transparent)),
+        var(--background-image);
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: var(--text-color, white);
+    text-shadow: 0 0 2px var(--shadow-color, #333),
+        0 0 6px var(--shadow-color, #333),
+        0 0 12px var(--shadow-color, #333),
+        0 0 20px var(--shadow-color, #333);
+    
+    font-weight: bold;
+}
+
+.full-background-dark {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background-color: black;
+
+    color: white;
+    text-shadow:
+        0 0 2px black,
+        0 0 6px black,
+        0 0 12px black,
+        0 0 20px black;
+
+    font-weight: bold;
+}
+
+.full-background-dark::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background-image:
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        var(--background-image);
+
+    background-size: cover;
+    background-position: center;
+
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.full-background-dark:hover::before {
+    transform: scale(1.1);
+    filter: brightness(0.7);
+}
+
+
+.full-background-light {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background-color: white;
+
+    color: black;
+    text-shadow: 0 0 2px white,
+        0 0 6px white,
+        0 0 12px white,
+        0 0 20px white;
+
+    font-weight: bold;
+}
+
+.full-background-light::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,0.5),
+            rgba(255,255,255,0.5)),
+        var(--background-image);
+
+    background-size: cover;
+    background-position: center;
+
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.full-background-light:hover::before {
+    transform: scale(1.1);
+    filter: brightness(0.7);
+}

@@ -1,0 +1,16 @@
+a.basic,
+button.basic,
+input.basic {
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    color: black;
+    border-radius: 32px;
+    padding: 10px;
+}
+
+a:hover.basic,
+button:hover.basic,
+input:hover.basic {
+    background-color: rgba(0, 0, 0, 0.2);
+}
