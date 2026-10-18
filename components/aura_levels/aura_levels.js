@@ -61,7 +61,7 @@ function getAuraLevel(level) {
     return `
     <div class="container level-card">
         <h3 class="base12">${level.rank}</h3>
-        ${getAuraSwirl(level)}
+        <div class="swirl-container">${getAuraSwirl(level)}</div>
         <div class="aura-description">
             <h3>${level.name}</h3>
             <h4 class="lysian">(${level.name})</h4>

@@ -239,11 +239,6 @@ body > nav {
     transform: rotate(var(--decoration-rotation-end, -100deg)) scale(1.1) translate(-20px, 20px);
 }
 
-.welcome-section:hover .explore-button {
-    transform: scale(1.05);
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
-}
-
 .welcome-section > * {
     position: relative;
     z-index: 1;
@@ -268,48 +263,10 @@ body > nav {
     line-height: 1.8;
 }
 
-.explore-button {
-    color: #333;
-    text-decoration: none;
-    position: absolute;
-    bottom: 10%;
-    left: 10%;
-
-    background-color: var(--orange-primary);
-    padding: 20px;
-    border: none;
-    border-radius: 35px;
-    font-size: 20px;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-}
-
-.explore-button:hover {
-    background-color: var(--orange-secondary);
-}
-
 .welcome-section:hover .rotating-background::before {
     transform: rotate(-95deg);
 }
 /*EXPLORE CARDS*/
-
-.container{
-    position: relative;
-}
-
-.carousel {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: center;
-    gap: 10px;
-}
-
-.carousel > * {
-    flex: 1;
-    min-width: 0;
-}
 
 .explore-section {
     width: 100%;
@@ -370,23 +327,6 @@ body > nav {
     padding: 30px;
 }
 
-.small-explore-button {
-    color: #333; 
-    text-decoration: none;
-    background-color: var(--orange-primary);
-    padding: 15px;
-    border: none;
-    border-radius: 35px;
-    font-size: 15px;
-    white-space: nowrap;
-}
-
-.small-explore-button:hover {
-    background-color: var(--orange-secondary);
-}
-
-
-
 .meet-the-cast-container{
     width: 100%;
     display: flex;
@@ -405,7 +345,6 @@ body > nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -421,6 +360,7 @@ body > nav {
     border-radius: 100px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
     transition: all 0.2s ease;
+    cursor: pointer;
 }
 
 .cast-card div:hover {
@@ -485,6 +425,45 @@ body > nav {
     padding: 40px;
     background-color: white;
 }
+
+.sub-section{
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 40px;
+    transition: ease 0.5s all;
+}
+.sub-section:hover {
+    transform: scale(1.01);
+}
+
+.sub-section p {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    padding: 10px;
+    display: none;
+    text-shadow: 0 0 2px white,
+        0 0 6px white,
+        0 0 12px white,
+        0 0 20px white;
+
+}
+.sub-section:hover p {
+    display: block;
+}
+.sub-section img {
+    position: relative;
+    transition: ease 0.5s all;
+}
+
+.sub-section:hover img {
+    transform: scale(0.9);
+    opacity: 0.2;
+    z-index: -1;
+}
+
+
+
 
 .main-section h3 {
     padding: 10px; 
@@ -733,3 +712,29 @@ body > nav {
     font-size: 30px;
 }
 
+
+/* GENERAL */
+
+.container{
+    position: relative;
+}
+
+.carousel {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    gap: 10px;
+}
+
+.carousel > * {
+    flex: 1;
+    min-width: 0;
+}
+
+.positioned {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+}

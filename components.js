@@ -1,6 +1,7 @@
 const applicationData = {
     characters: null,
-    posts: null
+    posts: null,
+    fanart: null,
 };
 
 const randomUsernames = [
@@ -84,7 +85,7 @@ const pages = {
         active: "forums-link"
     },
     "/pages/community.html": {
-        title: "Forum",
+        title: "Community",
         active: "community-link"
     },
     "/pages/login.html": {
@@ -94,13 +95,15 @@ const pages = {
 };
 
 async function loadData() {
-    const [characters, posts] = await Promise.all([
+    const [characters, posts, fanart] = await Promise.all([
         getData("/data/characters.json"),
-        getData("/data/posts.json")
+        getData("/data/posts.json"),
+        getData("/data/fanart.json")
     ]);
 
     applicationData.characters = characters.characters;
     applicationData.posts = posts.posts;
+    applicationData.fanart = fanart
 }
 
 async function getData(path) {
@@ -129,6 +132,8 @@ async function initializeCharacterCards() {
     await loadData();
     showCharacterCards();
 
+    /* If accesed from other page 
+    through an 'a' that refers to specific character*/
     if (window.location.hash) {
         const id = decodeURIComponent(window.location.hash.slice(1));
         const target = document.getElementById(id);
@@ -136,7 +141,6 @@ async function initializeCharacterCards() {
         if (target) {
             target.scrollIntoView({
                 behavior: "smooth",
-                // block: "center"
             });
         }
     }
@@ -319,6 +323,22 @@ function initializeMagnifying() {
     });
 }
 
+
+async function getFanart(){
+    await loadData();
+    const all_fanart = applicationData.fanart.map(e => {
+        return `
+        <a ${e.link ? 'href="'+ e.link +'"' : ""} target="_blank">
+        <img src="${e.img}" alt="${e.description} by ${e.artist}">
+        </a>
+        `
+    }).join("");
+    document.getElementById("fanart-gallery").innerHTML = all_fanart;
+    console.log(applicationData.fanart)
+    console.log(all_fanart)
+}
+
+
 /* Component getters */
 const component = {
     header: "header",
@@ -341,6 +361,7 @@ async function getFooter() {
     await loadComponent(component.footer);
     renderFooter();
 }
+
 
 async function getAuraLevels() {
     await loadComponent(component.auraLevels);

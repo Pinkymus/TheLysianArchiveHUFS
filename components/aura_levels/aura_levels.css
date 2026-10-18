@@ -90,30 +90,17 @@
     position: absolute;
     width: 90%;
     height: auto;
-    top: 40px;
     left: 5%;
     
     animation-play-state: paused;
 }
 
-
+.swirl-container {
+    position: relative;
+    height: 55%;
+}
 
 
 .aura-levels {
     margin-left: 10%;
-}
-
-.aura-levels li::marker {
-    content: counter(list-item) "   ";
-    font-family: 'Base12', serif;
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.aura-description {
-    position: absolute;
-    top: 250px;
-    margin-left: 5%;
-    margin-right: 5%;
-    width: 90%;
 }

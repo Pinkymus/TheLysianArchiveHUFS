@@ -14,3 +14,40 @@ button:hover.basic,
 input:hover.basic {
     background-color: rgba(0, 0, 0, 0.2);
 }
+
+.orange-button,
+.orange-button-small {
+    color: #333;
+    text-decoration: none;
+    background-color: var(--orange-primary);
+    border: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.orange-button {
+    padding: 20px;
+    border-radius: 40px;
+    font-size: 20px;
+}
+
+.orange-button:hover {
+    background-color: var(--orange-secondary);
+}
+
+.orange-button-small {
+    padding: 15px;
+    border-radius: 30px;
+    font-size: 15px;
+}
+
+.orange-button-small:hover {
+    background-color: var(--orange-secondary);
+}
+
+*:not(body):not(main):hover > .lift,
+*:not(body):not(main):hover > * > .lift,
+*:not(body):not(main):hover > * > * > .lift {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
