@@ -1,0 +1,53 @@
+.fanart-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.gallery-element {
+    display: flex;
+    flex-direction: column;
+    height: 330px;
+    width: fit-content;
+    max-width: 450px;
+    overflow: hidden;
+}
+
+.gallery-element > a {
+    display: block;
+    height: 85%;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.gallery-element-img {
+    display: block;
+    height: 110%;
+    width: auto;
+    max-width: 100%;
+
+    transition: transform 0.3s ease;
+}
+
+.gallery-element:hover .gallery-element-img {
+    transform: scale(1.05);
+}
+
+.gallery-element-text {
+    box-sizing: border-box;
+    height: 15%;
+    width: 100%;
+    padding: 4px 10px;
+
+    background-color: white;
+    text-align: left;
+
+    overflow: hidden;
+}
+
+.gallery-element-text h4,
+.gallery-element-text p {
+    margin: 0;
+}

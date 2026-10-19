@@ -11,5 +11,5 @@ function renderHeader(){
         <div id="navbar"></div>
     `;
 
-    getNavigationBar();
+    loadNavigationBar();
 }

@@ -1,7 +1,7 @@
 .single-carousel {
     position: relative;
     width: 100%;
-    height: var(--carousel-height, 400px);
+    height: var(--carousel-height, 60vh);
 }
 
 .single-carousel-display {

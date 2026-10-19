@@ -44,6 +44,13 @@ window.addEventListener("scroll", () => {
     }
 });
 
+
+const button_styles = document.createElement("link");
+button_styles.href = `/common-styles/buttons.css`;
+button_styles.rel = "stylesheet";
+document.head.appendChild(button_styles);
+
+
 // CHARACTER STUFF
 async function initializeCharacterCards() {
     await loadData();
@@ -102,107 +109,6 @@ function createCharacterCard(character) {
     `;
 }
 
-
-// FORUM COMPONENTS
-
-async function initializeForum() {
-    await loadData();
-    showForumPosts();
-}
-
-function showForumPosts() {
-    const all_posts = applicationData.posts
-        .map(createPost)
-        .join("");
-
-    document.getElementById("post-feed").innerHTML = all_posts;
-}
-
-function createPost(post) {
-    const post_id = `post-${post.id}`;
-    let all_comments = "";
-    all_comments += post.comments.map(c => createComment(c, post.id)).join("<hr>");
-
-    return `
-        <article id="${post_id}" class="forum-post">
-            <h2>${post.title}</h2>
-            <h3>${post.poster}</h3>
-            <div  class="date">${new Date(post.date).toLocaleString("en-GB")}</div>
-
-            <div style="
-                text-align:center;
-                background-image: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8)), url(${post.img});
-                background-size: cover;
-                background-position: center;
-                ">${post.img ? `<img src='${post.img}' width='auto' height='500px'>` : ""}</div>
-
-            ${post.content.map(c => "<p>" + c + "</p>").join("")}
-            <p class="likes">
-                ${createCommentButton(post.comments.length, post_id)}
-                ${createLikeButton(post.likes, post_id)}
-            </p>
-            <div class="forum-comment-section">
-                ${all_comments}
-                <form onsubmit="submitComment(event, 0)">
-                    <textarea id="${post_id}-comment-field" name="comment" rows="3" placeholder="Write a comment..."></textarea>   
-                    <button type="submit">Comment</button>
-                </form>
-            </div>
-        </article>
-    `
-}
-
-function createComment(comment, postid) {
-    const comment_id = `comment-${postid}-${comment.id}`;
-
-    return `
-    <div id="${comment_id}" class="forum-comment">
-        <h4>${comment.poster}</h4>
-        <div class="date">${new Date(comment.date).toLocaleString("en-GB")}</div>
-        <p>${comment.content}</p>
-        <p class="likes">
-            ${createLikeButton(comment.likes, comment_id)}
-        </p>
-    </div>
-    `
-}
-
-function createLikeButton(likes, parent_id) {
-    return `
-    <button onClick="
-        if(document.getElementById('${parent_id}').classList.contains('liked')){
-            document.getElementById('${parent_id}-likes').innerHTML = ${likes};
-            document.getElementById('${parent_id}').classList.remove('liked');
-        } else {
-            document.getElementById('${parent_id}-likes').innerHTML = (${likes} + 1);
-            document.getElementById('${parent_id}').classList.add('liked');
-            }
-        ">
-        &hearts; <span id="${parent_id}-likes">${likes}</span>
-    </button>
-    `
-}
-
-function createCommentButton(comments, parent_id) {
-    return `
-    <button onClick="
-        if(document.getElementById('${parent_id}').classList.contains('show')){
-            document.getElementById('${parent_id}').classList.remove('show');
-        } else {
-            document.getElementById('${parent_id}').classList.add('show');
-            }
-        ">
-        &#128488; <span id="${parent_id}-comments">${comments}<span>
-    </button>
-    `
-}
-
-function submitComment(event) {
-    // dont reload the page
-    event.preventDefault();
-    // TODO
-}
-
 // MAGNIFYER FROM HERE
 
 function initializeMagnifying() {
@@ -246,18 +152,6 @@ function initializeMagnifying() {
 }
 
 
-async function getFanart() {
-    await loadData();
-    const all_fanart = applicationData.fanart.map(e => {
-        return `
-        <a ${e.link ? 'href="' + e.link + '"' : ""} target="_blank">
-        <img src="${e.img}" alt="${e.description} by ${e.artist}">
-        </a>
-        `
-    }).join("");
-    document.getElementById("fanart-gallery").innerHTML = all_fanart;
-}
-
 
 /* Component getters */
 const component = {
@@ -269,22 +163,18 @@ const component = {
     featuredFanart: "featured_fanart",
     decoratedTitle: "decorated_title",
     login: "login",
+    featuredApply: "featured_apply",
+    fanartGallery: "fanart_gallery",
 
-    //TODO
+    //TODO:
     characters: "characters",
     forum: "forum",
-    fanartGallery: "fanart_gallery",
     magnifier: "magnifier"
 }
 
-async function getHeader() {
+async function loadHeader() {
     await loadComponent(component.header);
     renderHeader();
-}
-
-async function getDecoratedTitle(title, parent) {
-    await loadComponent(component.decoratedTitle);
-    newDecoratedTitle(title).render(parent);
 }
 
 async function loadFeaturedFanart() {
@@ -307,20 +197,48 @@ async function loadLogin() {
     renderLogin(document.getElementById("login-container"));
 }
 
-async function getNavigationBar() {
+async function loadFanart() {
+    await loadComponent(component.fanartGallery);
+    await loadData();
+    renderFanart(
+        document.getElementById("fanart-gallery"),
+        applicationData.fanart
+    );
+}
+
+async function loadFeaturedApply() {
+    await loadComponent(component.decoratedTitle);
+    await loadComponent(component.featuredApply);
+    renderFeaturedSubmission(
+        document.getElementById("featured-submission")
+    );
+}
+
+async function loadNavigationBar() {
     await loadComponent(component.navigationBar);
     renderNavigationBar();
 }
 
-async function getFooter() {
+async function loadFooter() {
     await loadComponent(component.footer);
     renderFooter();
 }
 
-
-async function getAuraLevels() {
+async function loadAuraLevels() {
     await loadComponent(component.auraLevels);
     renderAuraLevelCard();
+}
+
+async function loadForumPosts() {
+    await Promise.all([
+        loadComponent(component.forum),
+        loadData()
+    ]);
+
+    renderForumPosts(
+        document.getElementById("post-feed"),
+        applicationData.posts
+    );
 }
 
 /* Helper Functions */
@@ -358,118 +276,4 @@ function loadComponent(name) {
     loadedComponents.set(name, promise);
 
     return promise;
-}
-
-/* BAckgrounds and stuff */
-
-async function initializeFullBackgrounds() {
-    /* This method was written with the help of AI */
-    const sections = document.querySelectorAll(".full-background");
-
-    for (const section of sections) {
-        const background = getComputedStyle(section)
-            .getPropertyValue("--background-image")
-            .trim();
-
-        const url = background.match(/url\(["']?(.*?)["']?\)/)?.[1];
-
-        if (!url) continue;
-
-        const image = new Image();
-        image.src = url;
-
-        try {
-            await image.decode();
-
-            const canvas = document.createElement("canvas");
-            canvas.width = 50;
-            canvas.height = 50;
-
-            const ctx = canvas.getContext("2d");
-            ctx.drawImage(image, 0, 0, 50, 50);
-
-            const pixels = ctx.getImageData(0, 0, 50, 50).data;
-
-            let brightness = 0;
-
-            for (let i = 0; i < pixels.length; i += 4) {
-                brightness +=
-                    pixels[i] * 0.2126 +
-                    pixels[i + 1] * 0.7152 +
-                    pixels[i + 2] * 0.0722;
-            }
-
-            brightness /= pixels.length / 4;
-
-            if (brightness > 127) {
-                section.style.setProperty("--text-color", "black");
-                section.style.setProperty("--shadow-color", "white");
-                section.style.setProperty(
-                    "--overlay-color",
-                    "rgba(255,255,255,0.5)"
-                );
-            } else {
-                section.style.setProperty("--text-color", "white");
-                section.style.setProperty("--shadow-color", "#333");
-                section.style.setProperty(
-                    "--overlay-color",
-                    "rgba(0,0,0,0.35)"
-                );
-            }
-
-        } catch (error) {
-            console.warn("Could not analyze background:", url, error);
-        }
-    }
-}
-
-document.addEventListener("DOMContentLoaded", initializeFullBackgrounds);
-
-const button_styles = document.createElement("link");
-button_styles.href = `/common-styles/buttons.css`;
-button_styles.rel = "stylesheet";
-document.head.appendChild(button_styles);
-
-
-// TODO: LOOK AT THIS, must be updated for when the upload is going to work
-function initApplyForFeature() {
-    const fanartInput = document.getElementById("fanart-file");
-    const fanartPreview = document.getElementById("fanart-preview");
-    const fanartForm = document.getElementById("fanart-form");
-    const fanartMessage = document.getElementById("fanart-message");
-
-    let previewURL = null;
-
-    fanartInput.addEventListener("change", () => {
-        const file = fanartInput.files[0];
-
-        if (previewURL) {
-            URL.revokeObjectURL(previewURL);
-            previewURL = null;
-        }
-
-        fanartPreview.hidden = true;
-        fanartPreview.removeAttribute("src");
-
-        if (!file) return;
-
-        if (!["image/png", "image/jpeg", "image/webp", "image/gif"].includes(file.type)) {
-            fanartInput.value = "";
-            fanartMessage.textContent = "Please select a supported image file.";
-            return;
-        }
-
-        previewURL = URL.createObjectURL(file);
-        fanartPreview.src = previewURL;
-        fanartPreview.hidden = false;
-
-        fanartMessage.textContent = "";
-    });
-
-    fanartForm.addEventListener("submit", (event) => {
-        event.preventDefault();
-
-        fanartMessage.textContent =
-            "Preview only — fanart submissions are not yet available.";
-    });
 }
