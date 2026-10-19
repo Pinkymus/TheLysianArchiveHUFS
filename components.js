@@ -253,7 +253,7 @@ function loadComponent(name) {
     const scriptPromise = new Promise((resolve, reject) => {
         const script = document.createElement("script");
 
-        script.src = `/components/${name}/${name}.js`;
+        script.src = `/components/${name}.js`;
         script.onload = resolve;
         script.onerror = reject;
 
@@ -264,10 +264,16 @@ function loadComponent(name) {
     const stylePromise = new Promise((resolve, reject) => {
         const style = document.createElement("link");
 
-        style.href = `/components/${name}/${name}.css`;
+        style.href = `/components/${name}.css`;
         style.rel = "stylesheet";
         style.onload = resolve;
         style.onerror = reject;
+
+        // If no styke file exists just resolve
+        style.onerror = () => {
+            style.remove();
+            resolve();
+        };
 
         document.head.appendChild(style);
     });
