@@ -1,69 +1,3 @@
-const applicationData = {
-    characters: null,
-    posts: null,
-    fanart: null,
-    featuredFanart: null,
-};
-
-const randomUsernames = [
-    "AuraWhisperer",
-    "LysianLegend",
-    "SolskeldSunshine",
-    "LeopoldsBiggestFan",
-    "DefinitelyNotASlave",
-    "TheFifthCandidate",
-    "OverherreChampion",
-    "SecretMindReader",
-    "RunawayFromEarth",
-    "KalarieKnight",
-    "AuraStoneCollector",
-    "TheQueensFavorite",
-    "SamirsLastFlame",
-    "LianKnowsEverything",
-    "KatharinasChaos",
-    "RoyalTeaSpiller",
-    "MoonlitSorceress",
-    "TinyDragonLord",
-    "ChaosGoblin",
-    "SleepyNecromancer",
-    "WanderingMage",
-    "CertifiedPotionTaster",
-    "MushroomWizard",
-    "DragonEggThief",
-    "SuspiciouslyMagical",
-    "PocketSizedVillain",
-    "ProfessionalSideQuest",
-    "CursedButCute",
-    "TheLastSpellcaster",
-    "AccidentalHero",
-    "NyanCatLover3000",
-    "NinjaCat2000",
-    "SirMeowsALot",
-    "StrawberryGremlin",
-    "ToastGoblin",
-    "SleepyPotato",
-    "PrincessPickle",
-    "FrogInDisguise",
-    "MochiMonster",
-    "CosmicCupcake",
-    "AngryMarshmallow",
-    "TinyChaosBean",
-    "WaffleOverlord",
-    "ProfessionalNapTaker",
-    "DuckWithASword",
-    "EmotionalSupportFrog",
-    "SuspiciousPigeon",
-    "BootyLicker69",
-    "NikoSpo"
-];
-
-function generateUsername(element_id) {
-    const randomIndex = Math.floor(Math.random() * randomUsernames.length);
-
-    document.getElementById(element_id).value =
-        randomUsernames[randomIndex];
-}
-
 const pages = {
     "/index.html": {
         title: "The Lysian Archive",
@@ -94,26 +28,6 @@ const pages = {
         active: "login-link"
     }
 };
-
-async function loadData() {
-    const [characters, posts, fanart, featured_fanart] = await Promise.all([
-        getData("/data/characters.json"),
-        getData("/data/posts.json"),
-        getData("/data/fanart.json"),
-        getData("/data/featured-fanart.json")
-    ]);
-
-    applicationData.characters = characters.characters;
-    applicationData.posts = posts.posts;
-    applicationData.fanart = fanart;
-    applicationData.featuredFanart = featured_fanart;
-}
-
-async function getData(path) {
-    const response = await fetch(path);
-    const json_result = await response.json();
-    return json_result;
-}
 
 window.addEventListener("scroll", () => {
     const scrollY = window.scrollY;
@@ -353,7 +267,14 @@ const component = {
     auraLevels: "aura_levels",
     singleCarousel: "single_carousel",
     featuredFanart: "featured_fanart",
-    decoratedTitle: "decorated_title"
+    decoratedTitle: "decorated_title",
+    login: "login",
+
+    //TODO
+    characters: "characters",
+    forum: "forum",
+    fanartGallery: "fanart_gallery",
+    magnifier: "magnifier"
 }
 
 async function getHeader() {
@@ -379,6 +300,11 @@ async function loadFeaturedFanart() {
         document.getElementById("featured-artist"),
         applicationData.featuredFanart
     );
+}
+
+async function loadLogin() {
+    await loadComponent(component.login);
+    renderLogin(document.getElementById("login-container"));
 }
 
 async function getNavigationBar() {
@@ -434,7 +360,7 @@ function loadComponent(name) {
     return promise;
 }
 
-
+/* BAckgrounds and stuff */
 
 async function initializeFullBackgrounds() {
     /* This method was written with the help of AI */
