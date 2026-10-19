@@ -40,7 +40,7 @@ function getLogin() {
                             placeholder="NinjaCat2000" required>
                         <label for="newusername">New username</label>
                         <button type="button" id="generate-username"
-                            title="Generate random username">
+                            title="Generate random username" style="font-size: 28px">
                             &#127922;
                         </button>
                     </div>
@@ -125,14 +125,11 @@ function initLogin(parent) {
             // Your new password should be enter indentical both times
             const password1 = parent.querySelector("#new-password-1");
             const password2 = parent.querySelector("#new-password-2");
-
-            // If they dont match alert the user
             if (password1.value !== password2.value) {
                 password2.setCustomValidity("Passwords must match.");
                 password2.reportValidity();
                 return;
             }
-
             password2.setCustomValidity("");
 
             // TODO: Implement actual account registration
