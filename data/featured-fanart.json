@@ -1,0 +1,27 @@
+
+[
+    {
+        "title": "Original Expression Sheet",
+        "img": "/images/banner-image-3.webp",
+        "artist": {
+            "name": "Pinkymus",
+            "description": "Though not a fan, Pinkymus, the author, is a main source of artworks for the Kat & Leo universe."
+        }
+    },
+    {
+        "title": "Lysies",
+        "img": "/images/banner-image-8.webp",
+        "artist": {
+            "name": "Pinkymus",
+            "description": "Though not a fan, Pinkymus, the author, is a main source of artworks for the Kat & Leo universe."
+        }
+    },
+    {
+        "title": "Katharina",
+        "img": "/images/fanart/Hannah-fanart.webp",
+        "artist": {
+            "name": "Hannah",
+            "description": "Hannah has created many stunning artworks of the cast, including expression sketches and full illustrations."
+        }
+    }
+]

@@ -1,32 +1,94 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>The Lysian Archive</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="../style.css">
-        <script src="../components.js"></script>
-    </head>
-    <body>
-        <header id="header">
-            <script>getHeader()</script>
-        </header>
 
-        <main>
-            <section id="fanart" class="main-section">
-                <h2>Fan Art</h2>
-                <p>These are all images that can also be found on Unvale, made by our talented community members.</p>
-                <div id="fanart-gallery" class="image-gallery">
-                    <script>getFanart()</script>    
+<head>
+    <title>The Lysian Archive</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <script src="../components.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <script>getHeader()</script>
+    </header>
+
+    <main>
+        <section>
+            <div class="carousel">
+                <article id="featured-info" class="main-section container" style="flex: 1;">
+                    <h2>Featured Fan Art</h2>
+                    <img src="/images/assets/ornament-3-dark.svg" width="100%">
+                    <p>Each month we feature amazing artworks from the community.</p>
+                    <button onclick="document.getElementById('featured-apply').classList.remove('hidden');
+                        document.getElementById('featured-info').classList.add('hidden')"
+                        class="lift-1 orange-button positioned" style="left: 15%">Want to be featured?</button>
+                </article>
+
+                <article id="featured-apply" class="main-section container hidden" style="flex: 1;" >
+                    <h2>Submit Fan Art</h2>
+                    <img src="/images/assets/ornament-3-dark.svg" width="100%">
+                    <form id="fanart-form">
+
+                        <label for="fanart-file">Choose an image</label>
+                        <div style="display: flex; height: 100px;">
+                            <input class="basic" style="border-radius: 10px;" type="file" id="fanart-file" name="image"
+                            accept="image/png, image/jpeg, image/webp, image/gif" required>
+                            
+                            <img id="fanart-preview" alt="Image preview" hidden height="100%" width="auto">
+                        </div>
+
+                        <div class="fancy-lable" style="width: 100%;">
+                            <input type="text" id="fanart-title" placeholder=" " required>
+                            <label for="fanart-title">Artwork title</label>
+                        </div>
+
+                        <div class="fancy-lable" style="width: 100%;">
+                            <input type="text" id="fanart-artist" placeholder=" " required>
+                            <label for="fanart-artist">Artist name</label>
+                        </div>
+
+                        <div class="fancy-lable" style="width: 100%;">
+                            <input type="url" id="fanart-link" placeholder=" ">
+                            <label for="fanart-link">Link to original</label>
+                        </div>
+
+                        <p id="fanart-message" role="status"></p>
+                        <button type="submit" class="orange-button-small"
+                            style="width: 60%;">Apply</button>
+                        <button type="reset" onclick="
+                            document.getElementById('featured-apply').classList.add('hidden');
+                            document.getElementById('featured-info').classList.remove('hidden');
+                            document.getElementById('fanart-preview').hidden = true;
+                            "
+                            class="basic" style="width: 40%; margin-top: 5px;">Cancel</button>
+                    </form>
+                    <script>initApplyForFeature()</script>
+                </article>
+                <div id="featured" class="main-section" style="padding: 0; flex: 3; overflow: hidden;">
+                    <script>loadFeaturedFanart()</script>
                 </div>
-            </section>
+                <article id="featured-artist" class="main-section" style="flex: 1">
+                </article>
+            </div>
+        </section>
 
-            <section id="member-content" class="main-section">
-                <h2>Member Content</h2>
-                <p> &#x1F512; Login required to view member-only content. &#x1F512; </p>
-            </section>
-        </main>
+        <section id="fanart" class="main-section">
+            <h2>Fan Art</h2>
+            <p>These are all images that can also be found on Unvale, made by our talented community members.</p>
+            <div id="fanart-gallery" class="image-gallery">
+                <script>getFanart()</script>
+            </div>
+        </section>
 
-        <div id="footer"></div>
-        <script> getFooter() </script>
-    </body>
+        <section id="member-content" class="main-section">
+            <h2>Member Content</h2>
+            <p> &#x1F512; Login required to view member-only content. &#x1F512; </p>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+    <script> getFooter() </script>
+</body>
+
 </html>

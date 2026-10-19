@@ -1,18 +1,32 @@
 a.basic,
 button.basic,
-input.basic {
+input.basic,
+input[type="file"]::file-selector-button {
     background-color: transparent;
     border: none;
     text-decoration: none;
     color: black;
-    border-radius: 32px;
+    border-radius: 50px;
     padding: 10px;
+    cursor: pointer;
 }
 
 a:hover.basic,
 button:hover.basic,
-input:hover.basic {
+input:hover.basic,
+input[type="file"]:hover::file-selector-button {
     background-color: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+input[type="file"],
+input[type="file"].basic {
+    background: none;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    width: 100%;
+    cursor:default;
 }
 
 .orange-button,
@@ -45,9 +59,9 @@ input:hover.basic {
     background-color: var(--orange-secondary);
 }
 
-*:not(body):not(main):hover > .lift,
-*:not(body):not(main):hover > * > .lift,
-*:not(body):not(main):hover > * > * > .lift {
+*:not(body):not(main):hover > .lift-1,
+*:not(body):not(main):hover > * > .lift-2,
+*:not(body):not(main):hover > * > * > .lift-3 {
     transform: scale(1.05);
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
 }

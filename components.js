@@ -2,6 +2,7 @@ const applicationData = {
     characters: null,
     posts: null,
     fanart: null,
+    featuredFanart: null,
 };
 
 const randomUsernames = [
@@ -95,15 +96,17 @@ const pages = {
 };
 
 async function loadData() {
-    const [characters, posts, fanart] = await Promise.all([
+    const [characters, posts, fanart, featured_fanart] = await Promise.all([
         getData("/data/characters.json"),
         getData("/data/posts.json"),
-        getData("/data/fanart.json")
+        getData("/data/fanart.json"),
+        getData("/data/featured-fanart.json")
     ]);
 
     applicationData.characters = characters.characters;
     applicationData.posts = posts.posts;
-    applicationData.fanart = fanart
+    applicationData.fanart = fanart;
+    applicationData.featuredFanart = featured_fanart;
 }
 
 async function getData(path) {
@@ -212,7 +215,12 @@ function createPost(post) {
             <h3>${post.poster}</h3>
             <div  class="date">${new Date(post.date).toLocaleString("en-GB")}</div>
 
-            ${post.img ? "<img src='${post.img}'>" : ""}
+            <div style="
+                text-align:center;
+                background-image: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8)), url(${post.img});
+                background-size: cover;
+                background-position: center;
+                ">${post.img ? `<img src='${post.img}' width='auto' height='500px'>` : ""}</div>
 
             ${post.content.map(c => "<p>" + c + "</p>").join("")}
             <p class="likes">
@@ -324,18 +332,16 @@ function initializeMagnifying() {
 }
 
 
-async function getFanart(){
+async function getFanart() {
     await loadData();
     const all_fanart = applicationData.fanart.map(e => {
         return `
-        <a ${e.link ? 'href="'+ e.link +'"' : ""} target="_blank">
+        <a ${e.link ? 'href="' + e.link + '"' : ""} target="_blank">
         <img src="${e.img}" alt="${e.description} by ${e.artist}">
         </a>
         `
     }).join("");
     document.getElementById("fanart-gallery").innerHTML = all_fanart;
-    console.log(applicationData.fanart)
-    console.log(all_fanart)
 }
 
 
@@ -344,12 +350,35 @@ const component = {
     header: "header",
     navigationBar: "navigation_bar",
     footer: "footer",
-    auraLevels: "aura_levels"
+    auraLevels: "aura_levels",
+    singleCarousel: "single_carousel",
+    featuredFanart: "featured_fanart",
+    decoratedTitle: "decorated_title"
 }
 
 async function getHeader() {
     await loadComponent(component.header);
     renderHeader();
+}
+
+async function getDecoratedTitle(title, parent) {
+    await loadComponent(component.decoratedTitle);
+    newDecoratedTitle(title).render(parent);
+}
+
+async function loadFeaturedFanart() {
+    await Promise.all([
+        loadComponent(component.singleCarousel),
+        loadComponent(component.decoratedTitle),
+        loadComponent(component.featuredFanart),
+        loadData()
+    ]);
+
+    renderFeaturedFanart(
+        document.getElementById("featured"),
+        document.getElementById("featured-artist"),
+        applicationData.featuredFanart
+    );
 }
 
 async function getNavigationBar() {
@@ -474,3 +503,47 @@ const button_styles = document.createElement("link");
 button_styles.href = `/common-styles/buttons.css`;
 button_styles.rel = "stylesheet";
 document.head.appendChild(button_styles);
+
+
+// TODO: LOOK AT THIS, must be updated for when the upload is going to work
+function initApplyForFeature() {
+    const fanartInput = document.getElementById("fanart-file");
+    const fanartPreview = document.getElementById("fanart-preview");
+    const fanartForm = document.getElementById("fanart-form");
+    const fanartMessage = document.getElementById("fanart-message");
+
+    let previewURL = null;
+
+    fanartInput.addEventListener("change", () => {
+        const file = fanartInput.files[0];
+
+        if (previewURL) {
+            URL.revokeObjectURL(previewURL);
+            previewURL = null;
+        }
+
+        fanartPreview.hidden = true;
+        fanartPreview.removeAttribute("src");
+
+        if (!file) return;
+
+        if (!["image/png", "image/jpeg", "image/webp", "image/gif"].includes(file.type)) {
+            fanartInput.value = "";
+            fanartMessage.textContent = "Please select a supported image file.";
+            return;
+        }
+
+        previewURL = URL.createObjectURL(file);
+        fanartPreview.src = previewURL;
+        fanartPreview.hidden = false;
+
+        fanartMessage.textContent = "";
+    });
+
+    fanartForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        fanartMessage.textContent =
+            "Preview only — fanart submissions are not yet available.";
+    });
+}

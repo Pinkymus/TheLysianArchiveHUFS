@@ -416,7 +416,16 @@ body > nav {
 
 
 /* FORUM */
-.forum-post,
+.forum-post {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 40px;
+    width: 60%;
+    background-color: white;
+}
+
 .login-box,
 .main-section {
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
@@ -588,7 +597,6 @@ body > nav {
     margin: auto;
     margin-top: 10px;
     padding: 20px;
-
 }
 
 .fancy-lable {
@@ -737,4 +745,22 @@ body > nav {
     position: absolute;
     bottom: 10%;
     left: 10%;
+}
+
+.positioned-bottom-left {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+}
+
+.positioned-horizon-left {
+    position: absolute;
+    bottom: 45%;
+    left: 2%;
+}
+
+.positioned-horizon-right {
+    position: absolute;
+    bottom: 45%;
+    right: 2%;
 }

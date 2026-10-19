@@ -1,0 +1,45 @@
+.single-carousel {
+    position: relative;
+    width: 100%;
+    height: var(--carousel-height, 400px);
+}
+
+.single-carousel-display {
+    height: 100%; 
+    width: 100%;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.single-carousel-display > div{
+    height: 100%; 
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.single-carousel-display h3,
+.single-carousel-display h2 {
+    text-align: left;
+    color: white;
+    text-shadow:
+        0 0 2px black,
+        0 0 6px black,
+        0 0 12px black,
+        0 0 20px black;
+
+    font-weight: bold;
+}
+
+.single-carousel button{
+    color: white;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    text-shadow: 0 0 4px rgba(0,0,0,0.5);
+}
+
+.single-carousel button[hidden] {
+    display: none;
+}
