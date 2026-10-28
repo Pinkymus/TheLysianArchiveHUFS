@@ -1,0 +1,5 @@
+pinkymus.com {
+	root * /srv
+
+	fileserver
+}
