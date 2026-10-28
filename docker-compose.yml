@@ -1,0 +1,8 @@
+services:
+  files:
+    image: caddy:2-alpine
+    volumes:
+    - .:/srv
+    - ./Caddyfile:/etc/caddy/Caddyfile:ro
+    ports:
+    - 9156:80
