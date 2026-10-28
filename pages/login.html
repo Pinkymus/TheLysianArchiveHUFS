@@ -5,83 +5,22 @@
     <title>The Lysian Archive</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../style.css">
+    <script src="/dataaccess.js"></script>
     <script src="/components.js"></script>
 </head>
 
 <body>
-    <header id="header">
-        <script>getHeader("login-link")</script>
-    </header>
-
-    <main>
-        <section class="login-box">
-            <div id="login">
-                <h2>Login</h2>
-                <form>
-                    <div class="fancy-lable">
-                        <input type="text" id="username" placeholder=" " required>
-                        <label for="username">Username</label>
-                    </div>
-                    <div class="fancy-lable">
-                        <input type="password" id="password" name="password" placeholder=" " required>
-                        <label for="password">Password</label>
-                    </div>
-                    <input type="submit" value="Login">
-                    <input type="reset" value="Cancel">
-                </form>
-            </div>
-            <button id="show-sign-up" onclick="
-                    document.getElementById('sign-up').classList.remove('hidden');
-                    document.getElementById('show-login').classList.remove('hidden');
-                    document.getElementById('login').classList.add('hidden');
-                    document.getElementById('show-sign-up').classList.add('hidden');
-                    ">
-                Not yet a member?
-            </button>
-            <div id="sign-up" class="hidden">
-                <h2>Create an account</h2>
-                <form>
-                    <div class="fancy-lable">
-                        <input type="text" id="newusername" placeholder="NinjaCat2000" required>
-                        <label for="newusername">New username</label>
-                        <button type="button" onclick="generateUsername('newusername')">
-                            &#127922;
-                        </button>
-                    </div>
-
-                    <div class="fancy-lable">
-                        <input type="email" id="email" placeholder="email@example.com" required>
-                        <label for="email">Your email</label>
-                    </div>
-
-                    <div class="fancy-lable">
-                        <input type="password" id="new-password-1" placeholder="*********" required>
-                        <label for="new-password-1">New password</label>
-                    </div>
-
-                    <div class="fancy-lable">
-                        <input type="password" id="new-password-2" placeholder="*********" required>
-                        <label for="new-password-2">New password again</label>
-                    </div>
-                    <!-- There should be a check that these two passwords are identical -->
-                    <!-- This is to ensure the user has not made an error while typing -->
-
-                    <input type="submit" value="Register">
-                    <input type="reset" value="Cancel">
-                </form>
-                <button id="show-login" onclick="
-                    document.getElementById('sign-up').classList.add('hidden');
-                    document.getElementById('show-login').classList.add('hidden');
-                    document.getElementById('login').classList.remove('hidden');
-                    document.getElementById('show-sign-up').classList.remove('hidden');
-                    ">
-                Already have an account?
-            </button>
-            </div>
+    <header id="header"></header>
+    <main style="min-height: 600px;">
+        <div id="login-container"></div>
     </main>
-
     <div id="footer"></div>
-    <script> getFooter() </script>
+
+    <script>
+        loadHeader();
+        loadFooter();
+        loadLogin();
+    </script>
 </body>
 
 </html>

@@ -1,82 +1,33 @@
-const applicationData = {
-    characters: null,
-    posts: null
+const pages = {
+    "/index.html": {
+        title: "The Lysian Archive",
+        active: "home-link"
+    },
+    "/pages/world.html": {
+        title: "The World of Lysies",
+        active: "world-link"
+    },
+    "/pages/magic.html": {
+        title: "Aura",
+        active: "magic-link"
+    },
+    "/pages/characters.html": {
+        title: "Characters from the Lysian Universe",
+        active: "characters-link"
+    },
+    "/pages/forums.html": {
+        title: "Forum",
+        active: "forums-link"
+    },
+    "/pages/community.html": {
+        title: "Community",
+        active: "community-link"
+    },
+    "/pages/login.html": {
+        title: "Login",
+        active: "login-link"
+    }
 };
-
-const randomUsernames = [
-    "AuraWhisperer",
-    "LysianLegend",
-    "SolskeldSunshine",
-    "LeopoldsBiggestFan",
-    "DefinitelyNotASlave",
-    "TheFifthCandidate",
-    "OverherreChampion",
-    "SecretMindReader",
-    "RunawayFromEarth",
-    "KalarieKnight",
-    "AuraStoneCollector",
-    "TheQueensFavorite",
-    "SamirsLastFlame",
-    "LianKnowsEverything",
-    "KatharinasChaos",
-    "RoyalTeaSpiller",
-    "MoonlitSorceress",
-    "TinyDragonLord",
-    "ChaosGoblin",
-    "SleepyNecromancer",
-    "WanderingMage",
-    "CertifiedPotionTaster",
-    "MushroomWizard",
-    "DragonEggThief",
-    "SuspiciouslyMagical",
-    "PocketSizedVillain",
-    "ProfessionalSideQuest",
-    "CursedButCute",
-    "TheLastSpellcaster",
-    "AccidentalHero",
-    "NyanCatLover3000",
-    "NinjaCat2000",
-    "SirMeowsALot",
-    "StrawberryGremlin",
-    "ToastGoblin",
-    "SleepyPotato",
-    "PrincessPickle",
-    "FrogInDisguise",
-    "MochiMonster",
-    "CosmicCupcake",
-    "AngryMarshmallow",
-    "TinyChaosBean",
-    "WaffleOverlord",
-    "ProfessionalNapTaker",
-    "DuckWithASword",
-    "EmotionalSupportFrog",
-    "SuspiciousPigeon",
-    "BootyLicker69",
-    "NikoSpo"
-];
-
-function generateUsername(element_id) {
-    const randomIndex = Math.floor(Math.random() * randomUsernames.length);
-
-    document.getElementById(element_id).value =
-        randomUsernames[randomIndex];
-}
-
-async function loadData() {
-    const [characters, posts] = await Promise.all([
-        getData("/data/characters.json"),
-        getData("/data/posts.json")
-    ]);
-
-    applicationData.characters = characters.characters;
-    applicationData.posts = posts.posts;
-}
-
-async function getData(path) {
-    const response = await fetch(path);
-    const json_result = await response.json();
-    return json_result;
-}
 
 window.addEventListener("scroll", () => {
     const scrollY = window.scrollY;
@@ -93,64 +44,20 @@ window.addEventListener("scroll", () => {
     }
 });
 
-function getHeader(active_element) {
-    let page_title = "The Lysian Archive";
-    switch (active_element) {
-        case "home-link":
-            page_title = "The Lysian Archive";
-            break;
-        case "world-link":
-            page_title = "The World of Lysies"
-            break;
-        case "magic-link":
-            page_title = "Aura";
-            break;
-        case "characters-link":
-            page_title = "Characters from the Lysian Universe";
-            break;
-        case "community-link":
-            page_title = "The Lysian Archive";
-            break;
-        case "forums-link":
-            page_title = "Forum";
-            break;
-        case "login-link":
-            page_title = "Login"
-            break;
-    }
-    document.getElementById("header").innerHTML =
-        `
-        <div class="title">
-            <h1 id="page-title">${page_title}</h1>
-            <img src="/images/assets/ornament-3.svg" width="500px">
-        </div>
-        <div id="navbar"></div>
-    `;
-    getActiveNavigation(active_element)
-}
 
-function getActiveNavigation(active_element) {
-    fetch("/components/navigationbar.html")
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById("navbar").innerHTML = html;
-            document.getElementById(active_element).classList.add("active");
-        });
-}
+const button_styles = document.createElement("link");
+button_styles.href = `/common-styles/buttons.css`;
+button_styles.rel = "stylesheet";
+document.head.appendChild(button_styles);
 
-function getFooter() {
-    fetch("/components/footer.html")
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById("footer").innerHTML = html;
-        });
-}
 
 // CHARACTER STUFF
 async function initializeCharacterCards() {
     await loadData();
     showCharacterCards();
 
+    /* If accesed from other page 
+    through an 'a' that refers to specific character*/
     if (window.location.hash) {
         const id = decodeURIComponent(window.location.hash.slice(1));
         const target = document.getElementById(id);
@@ -158,7 +65,6 @@ async function initializeCharacterCards() {
         if (target) {
             target.scrollIntoView({
                 behavior: "smooth",
-                // block: "center"
             });
         }
     }
@@ -203,102 +109,6 @@ function createCharacterCard(character) {
     `;
 }
 
-
-// FORUM COMPONENTS
-
-async function initializeForum() {
-    await loadData();
-    showForumPosts();
-}
-
-function showForumPosts() {
-    const all_posts = applicationData.posts
-        .map(createPost)
-        .join("");
-
-    document.getElementById("post-feed").innerHTML = all_posts;
-}
-
-function createPost(post) {
-    const post_id = `post-${post.id}`;
-    let all_comments = "";
-    all_comments += post.comments.map(c => createComment(c, post.id)).join("<hr>");
-
-    return `
-        <article id="${post_id}" class="forum-post">
-            <h2>${post.title}</h2>
-            <h3>${post.poster}</h3>
-            <div  class="date">${new Date(post.date).toLocaleString("en-GB")}</div>
-
-            ${post.img ? "<img src='${post.img}'>" : ""}
-
-            ${post.content.map(c => "<p>" + c + "</p>").join("")}
-            <p class="likes">
-                ${createCommentButton(post.comments.length, post_id)}
-                ${createLikeButton(post.likes, post_id)}
-            </p>
-            <div class="forum-comment-section">
-                ${all_comments}
-                <form onsubmit="submitComment(event, 0)">
-                    <textarea id="${post_id}-comment-field" name="comment" rows="3" placeholder="Write a comment..."></textarea>   
-                    <button type="submit">Comment</button>
-                </form>
-            </div>
-        </article>
-    `
-}
-
-function createComment(comment, postid) {
-    const comment_id = `comment-${postid}-${comment.id}`;
-
-    return `
-    <div id="${comment_id}" class="forum-comment">
-        <h4>${comment.poster}</h4>
-        <div class="date">${new Date(comment.date).toLocaleString("en-GB")}</div>
-        <p>${comment.content}</p>
-        <p class="likes">
-            ${createLikeButton(comment.likes, comment_id)}
-        </p>
-    </div>
-    `
-}
-
-function createLikeButton(likes, parent_id) {
-    return `
-    <button onClick="
-        if(document.getElementById('${parent_id}').classList.contains('liked')){
-            document.getElementById('${parent_id}-likes').innerHTML = ${likes};
-            document.getElementById('${parent_id}').classList.remove('liked');
-        } else {
-            document.getElementById('${parent_id}-likes').innerHTML = (${likes} + 1);
-            document.getElementById('${parent_id}').classList.add('liked');
-            }
-        ">
-        &hearts; <span id="${parent_id}-likes">${likes}</span>
-    </button>
-    `
-}
-
-function createCommentButton(comments, parent_id) {
-    return `
-    <button onClick="
-        if(document.getElementById('${parent_id}').classList.contains('show')){
-            document.getElementById('${parent_id}').classList.remove('show');
-        } else {
-            document.getElementById('${parent_id}').classList.add('show');
-            }
-        ">
-        &#128488; <span id="${parent_id}-comments">${comments}<span>
-    </button>
-    `
-}
-
-function submitComment(event) {
-    // dont reload the page
-    event.preventDefault();
-    // TODO
-}
-
 // MAGNIFYER FROM HERE
 
 function initializeMagnifying() {
@@ -339,4 +149,146 @@ function initializeMagnifying() {
     magnifier.addEventListener("mouseleave", () => {
         glass.style.display = "none";
     });
+}
+
+
+
+/* Component getters */
+const component = {
+    header: "header",
+    navigationBar: "navigation_bar",
+    footer: "footer",
+    auraLevels: "aura_levels",
+    singleCarousel: "single_carousel",
+    featuredFanart: "featured_fanart",
+    decoratedTitle: "decorated_title",
+    login: "login",
+    featuredApply: "featured_apply",
+    fanartGallery: "fanart_gallery",
+
+    //TODO:
+    characters: "characters",
+    forum: "forum",
+    magnifier: "magnifier"
+}
+
+const styledComponents = new Set([
+    "aura_levels",
+    "fanart_gallery",
+    "footer",
+    "header",
+    "login",
+    "navigation_bar",
+    "single_carousel",
+]);
+
+async function loadHeader() {
+    await loadComponent(component.header);
+    renderHeader();
+}
+
+async function loadFeaturedFanart() {
+    await Promise.all([
+        loadComponent(component.singleCarousel),
+        loadComponent(component.decoratedTitle),
+        loadComponent(component.featuredFanart),
+        loadData()
+    ]);
+
+    renderFeaturedFanart(
+        document.getElementById("featured"),
+        document.getElementById("featured-artist"),
+        applicationData.featuredFanart
+    );
+}
+
+async function loadLogin() {
+    await loadComponent(component.login);
+    renderLogin(document.getElementById("login-container"));
+}
+
+async function loadFanart() {
+    await loadComponent(component.fanartGallery);
+    await loadData();
+    renderFanart(
+        document.getElementById("fanart-gallery"),
+        applicationData.fanart
+    );
+}
+
+async function loadFeaturedApply() {
+    await loadComponent(component.decoratedTitle);
+    await loadComponent(component.featuredApply);
+    renderFeaturedSubmission(
+        document.getElementById("featured-submission")
+    );
+}
+
+async function loadNavigationBar() {
+    await loadComponent(component.navigationBar);
+    renderNavigationBar();
+}
+
+async function loadFooter() {
+    await loadComponent(component.footer);
+    renderFooter();
+}
+
+async function loadAuraLevels() {
+    await loadComponent(component.auraLevels);
+    renderAuraLevelCard();
+}
+
+async function loadForumPosts() {
+    await Promise.all([
+        loadComponent(component.forum),
+        loadData()
+    ]);
+
+    renderForumPosts(
+        document.getElementById("post-feed"),
+        applicationData.posts
+    );
+}
+
+/* Helper Functions */
+const loadedComponents = new Map();
+
+function loadComponent(name) {
+    if (loadedComponents.has(name)) {
+        return loadedComponents.get(name);
+    }
+
+    /* Some components have funtionality in their respective .js file */
+    const scriptPromise = new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+
+        script.src = `/components/${name}.js`;
+        script.onload = resolve;
+        script.onerror = reject;
+
+        document.head.appendChild(script);
+    });
+
+    /* Component specific styling should be fetched */
+    const stylePromise = new Promise((resolve, reject) => {
+        if (!styledComponents.has(name)) {
+            resolve();
+            return;
+        }
+
+        const style = document.createElement("link");
+
+        style.href = `/components/${name}.css`;
+        style.rel = "stylesheet";
+        style.onload = resolve;
+        style.onerror = reject;
+
+        document.head.appendChild(style);
+    });
+
+    const promise = Promise.all([scriptPromise, stylePromise]);
+    loadedComponents.set(name, promise);
+
+    return promise;
 }

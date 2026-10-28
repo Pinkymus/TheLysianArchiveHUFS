@@ -1,3 +1,9 @@
+function renderFooter() {   
+    document.getElementById("footer").innerHTML = getFooter();
+}
+
+function getFooter(){
+return `
 <footer class="site-footer">
     <div class="footer-content">
         <h2>The Lysian Archive</h2>
@@ -25,3 +31,6 @@
         <p class="footer-copyright">&copy; 2026 The Lysian Archive</p>
     </div>
 </footer>
+
+`
+}

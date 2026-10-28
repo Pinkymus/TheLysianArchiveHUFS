@@ -1,0 +1,35 @@
+header {
+    background-image: 
+    url('/images/banner-image-1.webp');
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    background-size: auto 300px;
+    background-repeat: no-repeat;
+    background-position: left;
+    height: 300px;
+    width: 100%;
+    background-color: var(--orange-primary);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@font-face {
+    font-family: 'Highcrest';
+    src: url('/fonts/Highcrest.ttf') format('truetype');
+}
+
+.title {
+    width: 50%;
+    height: 50px;
+    padding: 80px 10% 0 40%;
+    text-align: center;
+}
+
+.title h1{
+    font-family: "Highcrest", serif;
+    font-size: 50px;
+    font-weight: lighter;
+    color: white;
+    white-space: nowrap;
+}

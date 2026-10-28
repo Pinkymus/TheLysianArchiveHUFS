@@ -9,7 +9,6 @@ html::-webkit-scrollbar {
     display: none;
     /*Chrome and Opera*/
 }
-
 html {
     -ms-overflow-style: none;
     /* IE and Edge */
@@ -25,41 +24,6 @@ html {
     /* scroll behavior when auto scrolling*/
     scroll-behavior: smooth;
     scroll-margin-top: 35vh;
-}
-
-header {
-    background-image: 
-    url('./images/banner-image-1.webp');
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-    background-size: auto 300px;
-    background-repeat: no-repeat;
-    background-position: left;
-    height: 300px;
-    width: 100%;
-    background-color: var(--orange-primary);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-@font-face {
-    font-family: 'Highcrest';
-    src: url('/fonts/Highcrest.ttf') format('truetype');
-}
-
-.title {
-    width: 50%;
-    height: 50px;
-    padding: 80px 10% 0 40%;
-    text-align: center;
-}
-
-.title h1{
-    font-family: "Highcrest", serif;
-    font-size: 50px;
-    font-weight: lighter;
-    color: white;
 }
 
 body {
@@ -107,6 +71,24 @@ h2 {
 }
 
 
+/* WORLD PAGE */
+
+.world-page-background {
+    background-image:
+        linear-gradient(to bottom,
+        white 0vh,
+        rgba(255, 255, 255, 0.4) 30vh,
+        rgba(255, 255, 255, 0.4) 90vh,
+        white 120vh),
+        url("/images/map-of-lysies.webp");
+
+    background-size: 100%;
+    background-position: center 300px;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+/* CHARACTER PAGE BACKGROUND*/
 
 .character-page-background {
     position: absolute;
@@ -172,107 +154,11 @@ body > nav {
 }
 
 
-.image-gallery {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.image-gallery img {
-    max-width: 100%;
-    max-height: 270px;
-}
-
-.image-gallery img:hover, .character-card img:hover  {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-    cursor: pointer;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* NAV MENU */
-.nav-menu {
-    justify-content: space-between;
-    display: flex;
-    z-index: 2;
-    margin: 0 10% 0 40%;
-}
-
-.nav-dropdown {
-    display: inline-block;
-    min-width: 80px;
-    z-index: 2;
-    position: relative;
-}
-
-.nav-dropdown a {
-    text-decoration: none;
-    color: white;
-}
-
-.nav-menu-button {
-    padding: 10px;
-    text-align: center;
-    border-radius: 15px 15px 0 0;
-}
-
-.nav-menu-button:hover {
-    background-color: var(--orange-secondary);
-}
-
-.nav-menu-button:active {
-    background-color: #c48143;
-}
-
-.nav-menu-button.active {
-    font-weight: bold;
-    text-shadow: 0 0 8px white;
-    /* color: red; */
-}
-
-.nav-dropdown-content {
-    z-index: 2;
-
-    width: 100%;
-    box-sizing: border-box;
-    top: 100%;
-    left: 0;
-
-    display: none;
-    position: absolute;
-    background-color: var(--orange-primary);
-}
-
-.nav-dropdown:hover .nav-dropdown-content {
-    display: block;
-    z-index: 2;
-}
-
-.nav-dropdown-content a {
-    padding: 10px;
-    display: block;
-}
-
-.nav-dropdown-content a:hover {
-    background-color: #dd9551;
-}
-
-.nav-dropdown-content:last-child {
-    border-radius: 0 0 15px 15px;
-}
-
-.nav-dropdown-content:last-child a:hover {
-    border-radius: 0 0 15px 15px;
-}
-
-
 /* HOME PAGE */
 .welcome-section {
     position: relative;
+    overflow: hidden;
+
     text-align: left;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
@@ -281,17 +167,61 @@ body > nav {
     min-height: 600px;
 
     background-image:
-    linear-gradient(to right,
-    white 0%,
-    white 30%,
-    transparent 60%),
-    url("/images/banner-image-4.webp");
+        linear-gradient(
+            to right,
+            white 0%,
+            white 30%,
+            transparent 60%
+        ),
+        url("/images/banner-image-4.webp");
 
-    background-size: auto 1200px;
-    background-position: 
-    center,            /* Gradient */
-    right -250px top 20%;
+    background-size:
+        100% 100%,
+        auto 1200px;
+
+    background-position:
+        center,
+        right -250px top 20%;
+
+    background-repeat: no-repeat;
 }
+
+.welcome-section::before {
+    content: "";
+    position: absolute;
+
+    top: var(--decoration-top, 50px);
+    left: var(--decoration-left, -120px);
+    width: var(--decoration-width, 600px);
+    height: var(--decoration-height, 600px);
+
+    background-image: var(
+        --decoration-image,
+        url("/images/assets/Fall-Leaves.png")
+    );
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    opacity: 0.2;
+    transform-origin: var(--decoration-origin, center);
+    transform: rotate(var(--decoration-rotation, -90deg));
+    transition: all 2s ease;
+
+    pointer-events: none;
+}
+
+.welcome-section:hover::before {
+    opacity: 0.7;
+    transform: rotate(var(--decoration-rotation-end, -100deg)) scale(1.1) translate(-20px, 20px);
+}
+
+.welcome-section > * {
+    position: relative;
+    z-index: 1;
+}
+
 .welcome-section h2{
     font-size: 40px;
     text-align: left;
@@ -311,25 +241,12 @@ body > nav {
     line-height: 1.8;
 }
 
-.explore-button {
-    color: #333;
-    text-decoration: none;
-    position: absolute;
-    bottom: 10%;
-    left: 10%;
-
-    background-color: var(--orange-primary);
-    padding: 20px;
-    border: none;
-    border-radius: 35px;
-    font-size: 20px;
+.welcome-section:hover .rotating-background::before {
+    transform: rotate(-95deg);
 }
+/*EXPLORE CARDS*/
 
-.explore-button:hover {
-    background-color: var(--orange-secondary);
-}
-
-.explore-section-container {
+.explore-section {
     width: 100%;
     display: flex;
     gap: 20px;
@@ -350,13 +267,29 @@ body > nav {
 }
 
 .explore-section-img {
+    position: relative;
     height: 70%;
     width: 100%;
-
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    overflow: hidden;
 }
+
+.explore-section-img::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: inherit;
+    background-size: cover;
+    background-position: inherit;
+    background-repeat: no-repeat;
+
+    transition: transform 0.3s ease;
+}
+
+.explore-section-card:hover .explore-section-img::before {
+    transform: scale(1.05);
+}
+
 
 .explore-section-text {
     box-sizing: border-box;
@@ -371,22 +304,6 @@ body > nav {
     margin: auto;
     padding: 30px;
 }
-
-.small-explore-button {
-    color: #333; 
-    text-decoration: none;
-    background-color: var(--orange-primary);
-    padding: 15px;
-    border: none;
-    border-radius: 35px;
-    font-size: 15px;
-}
-
-.small-explore-button:hover {
-    background-color: var(--orange-secondary);
-}
-
-
 
 .meet-the-cast-container{
     width: 100%;
@@ -406,7 +323,6 @@ body > nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -422,6 +338,7 @@ body > nav {
     border-radius: 100px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
     transition: all 0.2s ease;
+    cursor: pointer;
 }
 
 .cast-card div:hover {
@@ -477,7 +394,16 @@ body > nav {
 
 
 /* FORUM */
-.forum-post,
+.forum-post {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 40px;
+    width: 60%;
+    background-color: white;
+}
+
 .login-box,
 .main-section {
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
@@ -486,6 +412,48 @@ body > nav {
     padding: 40px;
     background-color: white;
 }
+
+.bordered {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.sub-section{
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 40px;
+    transition: ease 0.5s all;
+}
+.sub-section:hover {
+    transform: scale(1.01);
+}
+
+.sub-section p {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    padding: 10px;
+    display: none;
+    text-shadow: 0 0 2px white,
+        0 0 6px white,
+        0 0 12px white,
+        0 0 20px white;
+
+}
+.sub-section:hover p {
+    display: block;
+}
+.sub-section img {
+    position: relative;
+    transition: ease 0.5s all;
+}
+
+.sub-section:hover img {
+    transform: scale(0.9);
+    opacity: 0.2;
+    z-index: -1;
+}
+
 
 .main-section h3 {
     padding: 10px; 
@@ -552,9 +520,8 @@ body > nav {
 }
 
 .likes button,
-.login-box button,
-.login-box input[type="submit"],
-.login-box input[type="reset"] {
+.login-box button
+{
     font-size: 12px;
     border: none;
     border-radius: 4px;
@@ -568,9 +535,7 @@ body > nav {
 }
 
 .likes button:hover,
-.login-box button:hover,
-.login-box input[type="submit"]:hover,
-.login-box input[type="reset"]:hover {
+.login-box button:hover {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -585,13 +550,6 @@ body > nav {
     color: red;
 }
 
-
-/* LOGIN (extens some of the forum stuff above ) */
-
-.login-box {
-    text-align: center;
-}
-
 .forum-comment-section hr {
     margin: auto;
     margin-bottom: 20px;
@@ -599,22 +557,6 @@ body > nav {
     border-color: rgba(0, 0, 0, 0.2);
 }
 
-.login-box button,
-.login-box input[type="submit"],
-.login-box input[type="reset"] {
-    font-size: 16px;
-    margin-top: 10px;
-}
-
-.login-box form {
-    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
-    width: 60%;
-    border-radius: 10px;
-    margin: auto;
-    margin-top: 10px;
-    padding: 20px;
-
-}
 
 .fancy-lable {
     position: relative;
@@ -675,23 +617,6 @@ body > nav {
     color: rgba(0, 0, 0, 0.4);
 }
 
-/* WORLD PAGE */
-
-.world-page-background {
-    background-image:
-        linear-gradient(to bottom,
-        white 0vh,
-        rgba(255, 255, 255, 0.4) 30vh,
-        rgba(255, 255, 255, 0.4) 90vh,
-        white 120vh),
-        url("/images/map-of-lysies.webp");
-
-    background-size: 100%;
-    background-position: center 300px;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-}
-
 
 /* MAP MAGNIFIER */
 
@@ -734,7 +659,7 @@ body > nav {
     cursor: pointer;
 }
 
-/* AURA STUFF */
+/* SPECIAL FONT STUFF */
 @font-face {
     font-family: 'Base12';
     src: url('/fonts/Otherworldbase12-Regular.ttf') format('truetype');
@@ -744,17 +669,6 @@ body > nav {
     src: url('/fonts/Comicfontotherworld-Regular.ttf') format('truetype');
 }
 
-.aura-levels {
-    margin-left: 10%;
-}
-
-.aura-levels li::marker {
-    content: counter(list-item) "   ";
-    font-family: 'Base12', serif;
-    font-size: 22px;
-    font-weight: bold;
-}
-
 .lysian {
     font-family: 'Lysian', serif;
     font-size: 22px;
@@ -762,82 +676,87 @@ body > nav {
 
 .base12 {
     font-family: 'Base12', serif;
-    font-size: 22px;
+    font-size: 30px;
 }
 
 
+/* GENERAL */
 
-
-
-/* FOOTER */
-
-.site-footer {
+.container{
     position: relative;
-    z-index: 1;
-
-    margin-top: 50px;
-    padding: 40px 20px 210px;
-
-    background-color: white;
-    background-image:
-        linear-gradient(
-            to bottom,
-            white 0%,
-            transparent 60%
-        ),
-        url('/images/banner-image-2.webp');
-
-    background-size: 100% 100%, auto 200px;
-    background-position: center, bottom;
-    background-repeat: no-repeat, repeat-x;
-
-    text-align: center;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
-.footer-content {
-    max-width: 800px;
-    margin: auto;
-}
-
-.footer-content h2 {
-    font-size: 22px;
-    margin-bottom: 10px;
-}
-
-.footer-content p {
-    margin-bottom: 15px;
-}
-
-.footer-navigation,
-.footer-external-links {
+.carousel {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    gap: 10px;
+}
+
+.column {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    gap: 10px; 
+}
+
+.column > * {
+    flex: 1;
+    min-width: 0;
+}
+
+.carousel > * {
+    flex: 1;
+    min-width: 0;
+}
+
+.positioned {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+}
+
+.positioned-bottom-left {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+}
+
+.positioned-horizon-left {
+    position: absolute;
+    bottom: 45%;
+    left: 2%;
+}
+
+.positioned-horizon-right {
+    position: absolute;
+    bottom: 45%;
+    right: 2%;
+}
+
+
+.image-gallery {
+    display: flex;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-    margin: 20px 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.site-footer a {
-    color: #593b24;
-    text-decoration: none;
-    transition: color 0.2s ease;
+.image-gallery img {
+    max-width: 100%;
+    max-height: 270px;
 }
 
-.site-footer a:hover {
-    text-shadow: 0 0 2px #593b24;;
-    text-decoration: underline;
-}
-
-.site-footer hr {
-    width: 60%;
-    margin: 25px auto;
-    border: none;
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.footer-copyright {
-    font-size: 12px;
-    opacity: 0.7;
+.image-gallery img:hover, .character-card img:hover  {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }

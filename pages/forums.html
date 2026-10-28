@@ -4,19 +4,22 @@
         <title>The Lysian Archive</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../style.css">
+        <script src="/dataaccess.js"></script>
         <script src="../components.js"></script>
     </head>
     <body>
         <header id="header">
-            <script>getHeader("forums-link")</script>
+            <script>loadHeader()</script>
         </header>
 
+        <div>
+        </div>
         <main>
             <div id="post-feed"></div>
-            <script> initializeForum() </script>
+            <script> loadForumPosts() </script>
         </main>
 
         <div id="footer"></div>
-        <script> getFooter() </script>
+        <script> loadFooter() </script>
     </body>
 </html>

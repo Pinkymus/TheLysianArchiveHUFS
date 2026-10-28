@@ -1,40 +1,71 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>The Lysian Archive</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="../style.css">
-        <script src="/components.js"></script>
-    </head>
-    <body>
-        <header id="header">
-            <script>getHeader("magic-link")</script>
-        </header>
 
-        <main>
-            <section id="aura" class="main-section">
-                <h2>Aura</h2>
+<head>
+    <title>The Lysian Archive</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/common-styles/backgrounds.css">
+    <script src="/dataaccess.js"></script>
+    <script src="/components.js"></script>
+</head>
 
-                <p>
-                    Aura (<span class="lysian">Aura</span>) is an energy possessed by living creatures in Auropia.
-                    A person's ability to use aura depends on both their natural capacity and their learned control.
-                </p>
+<body>
+    <header id="header">
+        <script>loadHeader()</script>
+    </header>
 
-                <h3>Levels of Aura Control</h3>
+    <main>
+        <section class="welcome-section" style='
+        background-image:
+        linear-gradient(
+            to right,
+            white 0%,
+            white 30%,
+            transparent 60%
+        ),
+        url("/images/banner-image-11.webp");
 
-                <p>
-                    Within the Lysian Empire, aura control is traditionally divided
-                    into five levels.
-                </p>
-                <ol class="aura-levels">
-                    <li><strong>Inward</strong> &rarr; Control of aura within the body.</li>
-                    <li><strong>Outward</strong> &rarr; Using aura to affect objects when in direct contact.</li>
-                    <li><strong>Projective</strong> &rarr; Projecting aura beyond the body.</li>
-                    <li><strong>Extractive</strong> &rarr; Drawing aura from others.</li>
-                    <li><strong>Transcendental</strong> &rarr; Rare, highly individual abilities.</li>
-                </ol>
-                <br>
-                <h3>Aura and Biology</h3>
+        background-size:
+        100% 100%,
+        80% auto;
+
+        background-position:
+        center,
+        right -30% top 40%;
+
+        --decoration-origin: top center;
+        --decoration-image: url("/images/assets/Aura-Swirl.png");
+        --decoration-rotation: 20deg;
+        --decoration-rotation-end: 15deg;
+        --decoration-left: 50px;
+        --decoration-top: 40px;
+        --decoration-width: 600px;
+        --decoration-height: 600px;
+        '>
+            <h2>Aura</h2>
+            <h3>The unseen force that shapes Auropia.</h3>
+            <p>
+                Aura (<span class="lysian">Aura</span>) is an energy possessed by living creatures in Auropia.
+                A person's ability to use aura depends on both their natural capacity and their learned control.
+            </p>
+
+            <p>
+                It flows through the body, connects to the world around it, and forms much of the Lysian society;
+                from healing and craftmansship to power and politics.
+            </p>
+        </section>
+
+        <section id="aura-levels" class="main-section">
+            <script>loadAuraLevels()</script>
+        </section>
+
+        <div class="container carousel">
+            <section id="aura-biology" class="main-section half-background" style="flex: 2;
+            --background-image: url(/images/banner-image-8.webp);
+            --x: 200px
+            ">
+                <h2>Aura and Biology</h2>
 
                 <p>
                     The ability to develop aura is an inherited biological trait,
@@ -42,13 +73,13 @@
                 </p>
 
                 <p>
-                    Aura users also release aura into their surroundings. 
-                    Over time, this creates a feedback loop where aura-rich environments produce more aura users, 
+                    Aura users also release aura into their surroundings.
+                    Over time, this creates a feedback loop where aura-rich environments produce more aura users,
                     who then make the environment even richer in aura.
                 </p>
             </section>
-
-            <section id="brands" class="main-section">
+            <section id="brands" class="main-section full-background-dark"
+                style="--background-image: url(/images/banner-image-12.webp)">
                 <h2>Brands</h2>
 
                 <p>
@@ -57,28 +88,58 @@
                 </p>
 
                 <p>
-                    Brands are powered by the branded person's own aura. 
+                    Brands are powered by the branded person's own aura.
                     Because of this, suppressing the flow of aura can weaken a brand's influence,
                     although doing so for too long can be dangerous.
                 </p>
             </section>
+        </div>
+        <section id="stones" class="main-section" style="text-align: center;">
+            <h2>Aura Stones</h2>
+            <p>
+                Aura stones are gemstones whose crystal structures allow them to carry and interact with aura.
+            </p>
+            <p>
+                Stones with regular, well-ordered crystal structures are generally the most suitable.
+            </p>
+            <h3>The three classifications</h3>
+            <div class="carousel">
+                <div class="sub-section">
+                    <p>The Kruna is the highest denomination of currency in the Lysian Empire. Each coin is carved from
+                        a specific type of aura stone, giving every Kruna the same maximum aura capacity. Unlike
+                        ordinary currency, its value lies not only in what it can purchase, but also in the aura it can
+                        store.</p>
+                    <h4>Kruna</h4>
+                    <img src="/images/assets/aura/stone-1.png" width="100%">
+                    <h5>Currency of the Empire</h5>
+                </div>
+                <div class="sub-section">
+                    <p style="top: 20%;">Aura gems are naturally occurring stones capable of storing aura. They vary greatly in
+                        appearance, material, and capacity, with some holding considerably more aura than others. Unlike
+                        Kruna or rune stones, they have no predetermined function, making them versatile resources for
+                        storing and supplying aura.
+                        <br>
+                        It should also be noted that both Kruna and Rune stones are cut from specific types of Aura Gems.
+                    </p>
+                    <h4>Aura Gems</h4>
+                    <img src="/images/assets/aura/stone-2.png" width="100%">
+                    <h5>Power in Its Natural Form</h5>
+                </div>
+                <div class="sub-section">
+                    <p>Rune stones, commenly refurred to as Metimur stones, are aura stones engraved with special runes that alter how their stored aura behaves.
+                        Each rune serves a specific purpose, such as igniting a fire or rendering an opponent
+                        unconscious. By supplying the necessary aura, even those with limited control can perform feats
+                        that would otherwise require considerable skill.</p>
+                    <h4>Rune Stones</h4>
+                    <img src="/images/assets/aura/stone-3.png" width="100%">
+                    <h5>Magic Made Accessible</h5>
+                </div>
+            </div>
+        </section>
+    </main>
 
+    <div id="footer"></div>
+    <script> loadFooter() </script>
+</body>
 
-            <section id="stones" class="main-section">
-                <h2>Aura Stones</h2>
-
-                <p>
-                    Aura stones are gemstones whose crystal structures allow them to carry and interact with aura.
-                </p>
-
-                <p>
-                    They can be used in their natural form or engraved with runes that guide the way aura flows through them. 
-                    Stones with regular, well-ordered crystal structures are generally the most suitable.
-                </p>
-            </section>
-        </main>
-
-        <div id="footer"></div>
-        <script> getFooter() </script>
-    </body>
 </html>

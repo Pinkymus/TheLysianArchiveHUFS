@@ -1,0 +1,71 @@
+a.basic,
+button.basic,
+input.basic,
+input[type="file"]::file-selector-button {
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    color: black;
+    border-radius: 50px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+a:hover.basic,
+button:hover.basic,
+input:hover.basic,
+input[type="file"]:hover::file-selector-button {
+    background-color: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+input[type="file"],
+input[type="file"].basic {
+    background: none;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    width: 100%;
+    cursor:default;
+}
+
+.orange-button,
+.orange-button-small {
+    color: #333;
+    text-decoration: none;
+    background-color: var(--orange-primary);
+    border: none;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    white-space: nowrap;
+}
+
+.orange-button {
+    padding: 20px;
+    border-radius: 40px;
+    font-size: 20px;
+}
+
+.orange-button:hover {
+    background-color: var(--orange-secondary);
+}
+
+.orange-button-small {
+    padding: 15px;
+    border-radius: 30px;
+    font-size: 15px;
+}
+
+.orange-button-small:hover {
+    background-color: var(--orange-secondary);
+}
+
+*:not(body):not(main):hover > .lift-1,
+*:not(body):not(main):hover > * > .lift-2,
+*:not(body):not(main):hover > * > * > .lift-3 {
+    transform: scale(1.05);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}

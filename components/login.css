@@ -1,0 +1,20 @@
+.login-box {
+    text-align: center;
+}
+
+
+.login-box button,
+.login-box input[type="submit"],
+.login-box input[type="reset"] {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.login-box form {
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+    width: 60%;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 10px;
+    padding: 20px;
+}

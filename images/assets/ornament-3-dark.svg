@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 40" width="600" height="40">
+    <g fill="none" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+        <!-- Left outer concave diamond -->
+        <path d="M16 20 Q28 7 40 20 Q28 33 16 20 Z"></path>
+
+        <!-- Left line -->
+        <line x1="40" y1="20" x2="280" y2="20"></line>
+
+        <!-- Center diamond -->
+        <path d="M280 20 L300 4 L320 20 L300 36 Z"></path>
+
+        <!-- Small 4-point star inside -->
+        <path d="M300 11 L303 17 L309 20 L303 23 L300 29 L297 23 L291 20 L297 17 Z" fill="#333"></path>
+
+        <!-- Right line -->
+        <line x1="320" y1="20" x2="560" y2="20"></line>
+
+        <!-- Right outer concave diamond -->
+        <path d="M584 20 Q572 7 560 20 Q572 33 584 20 Z"></path>
+
+    </g>
+</svg>

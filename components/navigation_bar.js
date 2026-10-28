@@ -1,4 +1,16 @@
-<nav>
+function renderNavigationBar() {
+    const currentPage = window.location.pathname;
+    const page = pages[currentPage] ?? pages["/index.html"];
+
+    const html = getNavigationBar()
+    document.getElementById("navbar").innerHTML = html;
+    document.getElementById(page.active).classList.add("active");
+}
+
+
+function getNavigationBar(){
+    return `
+    <nav>
     <div class="nav-menu">
 
         <div class="nav-dropdown">
@@ -84,3 +96,5 @@
 
     </div>
 </nav>
+    `
+}

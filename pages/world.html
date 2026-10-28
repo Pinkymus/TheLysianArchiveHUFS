@@ -5,12 +5,13 @@
     <title>The Lysian Archive</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../style.css">
+    <script src="/dataaccess.js"></script>
     <script src="/components.js"></script>
 </head>
 
 <body class="world-page-background">
     <header id="header">
-        <script>getHeader("world-link")</script>
+        <script>loadHeader()</script>
     </header>
 
 
@@ -244,7 +245,7 @@
     </main>
 
     <div id="footer"></div>
-    <script> getFooter() </script>
+    <script> loadFooter() </script>
 </body>
 
 </html>

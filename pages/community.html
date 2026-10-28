@@ -1,39 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>The Lysian Archive</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="../style.css">
-        <script src="../components.js"></script>
-    </head>
-    <body>
-        <header id="header">
-            <script>getHeader("community-link")</script>
-        </header>
 
-        <main>
-            <section id="fanart" class="main-section">
-                <h2>Fan Art</h2>
-                <p>These are all images that can also be found on Unvale, made by our talented community members.</p>
-                <div class="image-gallery">
-                    <img src="../images/fanart/Queen-of-stars-fanart-Katharina.webp" alt="Katharina by Queen of Stars">
-                    <img src="../images/fanart/Hannah-fanart.webp" alt="Katharina by Hannah">
-                    <img src="../images/fanart/Lthecat-fanart-Katharina.awebp" alt="Katharina by Lthecat">
-                    <img src="../images/fanart/meikaseeka-fanart-katharina.webp" alt="Katharina by Meikaseeka">
-                    <img src="../images/fanart/Asg0-fanart-Leopold.webp" alt="Leopold by Asg0">
-                    <img src="../images/fanart/Hannah-fanart-leopold.webp" alt="Leopold by Hannah">
-                    <img src="../images/fanart/glicheeB-fanart-leopold.webp" alt="Leopold by glicheeB">
-                    <img src="../images/fanart/Lynette-fanart-Katharina.webp" alt="Katharina by Lynette">
+<head>
+    <title>The Lysian Archive</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <script src="/dataaccess.js"></script>
+    <script src="../components.js"></script>
+</head>
+
+<body>
+    <header id="header"></header>
+
+    <main>
+        <section>
+            <div class="carousel">
+                <article id="featured-submission" 
+                    class="main-section container" style="flex: 1;">
+                </article>
+
+                <div id="featured"
+                    class="main-section" style="padding: 0; flex: 3; overflow: hidden;">
                 </div>
-            </section>
 
-            <section id="member-content" class="main-section">
-                <h2>Member Content</h2>
-                <p> &#x1F512; Login required to view member-only content. &#x1F512; </p>
-            </section>
-        </main>
+                <article id="featured-artist"
+                    class="main-section" style="flex: 1;">
+                </article>
+            </div>
+        </section>
 
-        <div id="footer"></div>
-        <script> getFooter() </script>
-    </body>
+        <section id="fanart" class="main-section" style="text-align: center;">
+            <h2>Fan Art</h2>
+            <p>These are all images that can also be found on Unvale, made by our talented community members.</p>
+            <div id="fanart-gallery" class="fanart-gallery"></div>
+        </section>
+
+        <section id="member-content" class="main-section" style="text-align: center;">
+            <h2>Member Content</h2>
+            <p> &#x1F512; Login required to view member-only content. &#x1F512; </p>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+    <script> 
+        loadHeader()
+        loadFooter(); 
+        loadFeaturedApply();
+        loadFeaturedFanart();
+        loadFanart();
+    </script>
+</body>
+
 </html>

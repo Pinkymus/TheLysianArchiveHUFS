@@ -5,16 +5,25 @@
     <title>The Lysian Archive</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./style.css">
+    <script src="/dataaccess.js"></script>
     <script src="components.js"></script>
 </head>
 
 <body>
     <header id="header">
-        <script>getHeader("home-link")</script>
+        <script>loadHeader()</script>
     </header>
 
     <main>
-        <section class="welcome-section">
+        <script>
+            document.addEventListener("transitionrun", (event) => {
+                if (event.target.classList.contains("orange-button")) {
+                    console.log("Transitioning:", event.propertyName);
+                }
+            });
+        </script>
+        <section class="main-section welcome-section">
+
             <h3>Welcome to</h3>
             <h2>The Lysian Archive</h2>
 
@@ -27,10 +36,10 @@
                 Explore the world, learn about its magic, meet the characters,
                 or visit the community pages.
             </p>
-            <a class="explore-button" href="/pages/world.html">Begin Exploring &rarr;</a>
+            <a class="positioned orange-button lift-1" href="/pages/world.html">Begin Exploring &rarr;</a> // this button animates itelf when I open the page, it's not supposed to
         </section>
 
-        <section class="explore-section-container">
+        <section class="explore-section container">
             <article class="explore-section-card">
                 <div class="explore-section-img" style="background-image: url('/images/banner-image-9.webp');
                     background-position: center 25%;">
@@ -40,7 +49,7 @@
                     <h2>The World</h2>
                     <p>Explore the nations, cities and history of Lysies.</p>
                     <div>
-                        <a href="/pages/world.html" class="small-explore-button">Explore the World &rarr;</a>
+                        <a href="/pages/world.html" class="orange-button-small lift-3">Explore the World &rarr;</a>
                     </div>
                 </div>
             </article>
@@ -53,7 +62,7 @@
                     <h2>The Magic</h2>
                     <p>Explore the aura that permiates through the Lysian Empire.</p>
                     <div>
-                        <a href="/pages/magic.html" class="small-explore-button">Explore the Aura &rarr;</a>
+                        <a href="/pages/magic.html" class="orange-button-small lift-3">Explore the Aura &rarr;</a>
                     </div>
                 </div>
             </article>
@@ -66,7 +75,7 @@
                     <h2>The Characters</h2>
                     <p>Meet all major characters from the Kat & Leo book.</p>
                     <div>
-                        <a href="/pages/characters.html" class="small-explore-button">Explore the Characters &rarr;</a>
+                        <a href="/pages/characters.html" class="orange-button-small lift-3">Explore the Characters &rarr;</a>
                     </div>
                 </div>
             </article>
@@ -75,10 +84,8 @@
         <section id="meet-the-cast" class="meet-the-cast-container">
             <div class="meet-the-cast-header">
                 <h2>Meet The Cast</h2>
-                <!-- <img src="images/assets/ornament-5.svg" width="40%"> -->
-                <!-- <div style="width: 20%;"></div> -->
                 <div style="width: 60%; border-top: 2px rgba(0,0,0,0.2) solid;"></div>
-                <a href="/pages/characters.html">View all characters &rarr;</a>
+                <a class="basic" href="/pages/characters.html">View all characters &rarr;</a>
             </div>
             <div class="meet-the-cast-carousel">
                 <a class="cast-card" href="pages/characters.html#Katharina-card">
@@ -110,7 +117,7 @@
     </main>
 
     <div id="footer"></div>
-    <script> getFooter() </script>
+    <script> loadFooter() </script>
 
 </body>
 
