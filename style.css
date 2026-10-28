@@ -173,7 +173,7 @@ body > nav {
             white 30%,
             transparent 60%
         ),
-        url("/images/banner-image-4.webp");
+        url("https://image-cdn-prod.unvale.io/insecure/s:1600::/quality:99/aHR0cHM6Ly9kb2N1bWVudC1jZG4tbmV4dC51bnZhbGUuaW8vd29ybGQvZTcyNDQxNzMtYTAzNC00NDVmLTk3MmQtMTBiMzhhYWY5YWVhL2FkZjg5ZjcxLTFjYTctNDZmNS1hN2EyLWUzZTBhNTQxZGEyMC53ZWJw.webp");
 
     background-size:
         100% 100%,
@@ -347,35 +347,35 @@ body > nav {
 
 /* Katharina */
 .cast-card:nth-child(1) div {
-    background-image: url(images/characters/katharina-2.webp);
+    background-image: url(https://image-cdn-prod.unvale.io/insecure/s:1600::/quality:99/aHR0cHM6Ly9kb2N1bWVudC1jZG4tbmV4dC51bnZhbGUuaW8vY2hhcmFjdGVycy9jMzQ0OWY4Yy1iZWM4LTQzMjQtYmJlMy03NWM4OWRjZTZiMTYvMzE0ZWFlMjEtNjg3Zi00ZjczLTlhNzctNmU0NzUzZDgyYzVkLndlYnA.webp);
     background-size: 140%;
     background-position: top 10% left 45%;
 }
 
 /* Leopold */
 .cast-card:nth-child(2) div {
-    background-image: url(images/characters/leopold-2.webp);
+    background-image: url(https://image-cdn-prod.unvale.io/insecure/s:1600::/quality:99/aHR0cHM6Ly9kb2N1bWVudC1jZG4tbmV4dC51bnZhbGUuaW8vY2hhcmFjdGVycy9kZjQ2MTc3Ni0zYzA1LTRiZjctOTQ1MS1kMTg2YmVjNjY1MjYvMWY4ZmYxNzQtZDI1Ni00MWUzLTk3ODQtMWFlYTgyZWEyYTk3LndlYnA.webp);
     background-size: 350%;
     background-position: top 6% left 38%;
 }
 
 /* Deliah */
 .cast-card:nth-child(3) div {
-    background-image: url(images/characters/deliah-3.webp);
+    background-image: url(https://image-cdn-prod.unvale.io/insecure/s:1600::/quality:99/aHR0cHM6Ly9kb2N1bWVudC1jZG4tbmV4dC51bnZhbGUuaW8vY2hhcmFjdGVycy80YzJjMmZiNC0zZWZiLTQxODYtYTVjNC1lMjRhYmMyM2QzNzEvYjU1YjY2N2ItNTM4MC00MjBkLWJhM2UtOTI0MzFmN2EwZjM0LndlYnA.webp);
     background-size: 250%;
     background-position: top 10% left 25%;
 }
 
 /* Alfred */
 .cast-card:nth-child(4) div {
-    background-image: url("/images/characters/alfred.webp");
+    background-image: url("https://image-cdn-prod.unvale.io/insecure/s:1600::/quality:99/aHR0cHM6Ly9kb2N1bWVudC1jZG4tbmV4dC51bnZhbGUuaW8vY2hhcmFjdGVycy84YWYyNDM2ZC1jYTIzLTQzYTUtODkwYy0wNjI5MTVmNTM1MjYvYzI0MmZjOWUtYTY2OC00OGMwLWJmODMtMmNlNDljNzJmYTRiLndlYnA.webp");
     background-size: 110%;
     background-position: top 22% left 50%;
 }
 
 /* Sabuh */
 .cast-card:nth-child(5) div {
-    background-image: url("/images/characters/sabuh-2.webp");
+    background-image: url("https://image-cdn-prod.unvale.io/insecure/s:1600::/quality:99/aHR0cHM6Ly9kb2N1bWVudC1jZG4tbmV4dC51bnZhbGUuaW8vY2hhcmFjdGVycy9mYTE1ZjIwOC02NDlhLTRjMDgtYjZmZC0wZWQzOTg4ZjAzODgvYWMzNDc2ZDUtNTM3YS00YmIwLWFkYWMtYmQ4MWQyYzFjMGNiLndlYnA.webp");
     background-size: 280%;
     background-position: top 13% left 10%;
 }
