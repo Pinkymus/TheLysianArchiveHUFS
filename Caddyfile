@@ -1,4 +1,4 @@
-pinkymus.com {
+http://pinkymus.com {
 	root * /srv
 
 	file_server
