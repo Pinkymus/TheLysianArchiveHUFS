@@ -5,8 +5,10 @@
     <title>The Lysian Archive</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./style.css">
+    <script src="/components.js"></script>
     <script src="/dataaccess.js"></script>
-    <script src="components.js"></script>
+    <script src="/login_controller.js"></script>
+    <script src="/controller.js"></script>
 </head>
 
 <body>
@@ -14,17 +16,17 @@
         <script>loadHeader()</script>
     </header>
 
+
+
     <main>
-        <script>
-            document.addEventListener("transitionrun", (event) => {
-                if (event.target.classList.contains("orange-button")) {
-                    console.log("Transitioning:", event.propertyName);
-                }
-            });
-        </script>
         <section class="main-section welcome-section">
 
-            <h3>Welcome to</h3>
+            <h3 id="welcome-text">Welcome to</h3>
+            <script>
+                if(isLoggedIn()){
+                    document.getElementById("welcome-text").innerHTML= "Welcome " + getCurrentUser() + ", to"
+                }
+            </script>
             <h2>The Lysian Archive</h2>
 
             <p>

@@ -8,7 +8,7 @@ function getLogin() {
             <div id="login">
                 <h2>Login</h2>
 
-                <form id="login-form">
+                <form id="login-form" onsubmit="login(event)">
                     <div class="fancy-lable">
                         <input type="text" id="username"
                             placeholder=" " required>
