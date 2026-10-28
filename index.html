@@ -15,6 +15,13 @@
     </header>
 
     <main>
+        <script>
+            document.addEventListener("transitionrun", (event) => {
+                if (event.target.classList.contains("orange-button")) {
+                    console.log("Transitioning:", event.propertyName);
+                }
+            });
+        </script>
         <section class="main-section welcome-section">
 
             <h3>Welcome to</h3>
@@ -29,7 +36,7 @@
                 Explore the world, learn about its magic, meet the characters,
                 or visit the community pages.
             </p>
-            <a class="positioned orange-button lift-1" href="/pages/world.html">Begin Exploring &rarr;</a>
+            <a class="positioned orange-button lift-1" href="/pages/world.html">Begin Exploring &rarr;</a> // this button animates itelf when I open the page, it's not supposed to
         </section>
 
         <section class="explore-section container">

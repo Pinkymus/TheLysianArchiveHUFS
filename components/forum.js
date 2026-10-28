@@ -26,7 +26,9 @@ function getPost(post) {
                 background-image: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8)), url(${post.img});
                 background-size: cover;
                 background-position: center;
-                ">${post.img ? `<img src='${post.img}' width='auto' height='500px'>` : ""}</div>
+                overflow:hidden;
+                ">${post.img ? `<img src='${post.img}' width='auto' height='500px' style="display: block; margin: auto">` : ""}
+            </div>
 
             ${post.content.map(c => "<p>" + c + "</p>").join("")}
             <p class="likes">

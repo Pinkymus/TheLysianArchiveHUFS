@@ -172,6 +172,16 @@ const component = {
     magnifier: "magnifier"
 }
 
+const styledComponents = new Set([
+    "aura_levels",
+    "fanart_gallery",
+    "footer",
+    "header",
+    "login",
+    "navigation_bar",
+    "single_carousel",
+]);
+
 async function loadHeader() {
     await loadComponent(component.header);
     renderHeader();
@@ -262,18 +272,17 @@ function loadComponent(name) {
 
     /* Component specific styling should be fetched */
     const stylePromise = new Promise((resolve, reject) => {
+        if (!styledComponents.has(name)) {
+            resolve();
+            return;
+        }
+
         const style = document.createElement("link");
 
         style.href = `/components/${name}.css`;
         style.rel = "stylesheet";
         style.onload = resolve;
         style.onerror = reject;
-
-        // If no styke file exists just resolve
-        style.onerror = () => {
-            style.remove();
-            resolve();
-        };
 
         document.head.appendChild(style);
     });
