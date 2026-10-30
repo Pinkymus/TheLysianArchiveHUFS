@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Lysian Archive</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <script src="/components.js"></script>
+    <script src="/dataaccess.js"></script>
+    <script src="/login_controller.js"></script>
+    <script src="/controller.js"></script>
+</head>
+
+<body>
+    <header id="header"></header>
+    <main style="min-height: 600px;">
+        <div class="main-section">
+            <p>Welcome To Your Account Page</p>
+            <p id="user-info"></p>
+        </div>
+    </main>
+    <div id="footer"></div>
+    <script>
+        loadHeader();
+        loadFooter();
+        document.getElementById("user-info").innerHTML = "Username: " + getCurrentUser();
+    </script>
+</body>
+
+</html>

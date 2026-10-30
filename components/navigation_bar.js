@@ -9,7 +9,7 @@ function renderNavigationBar() {
 
 
 function getNavigationBar(){
-    return `
+    let navbar = `
     <nav>
     <div class="nav-menu">
 
@@ -84,17 +84,47 @@ function getNavigationBar(){
                     Forums
                 </div>
             </a>
+        </div> `
+        
+        if (isLoggedIn()){
+            navbar +=`
+    
+            <div class="nav-dropdown">
+                <a href="/pages/account.html">
+                    <div id="account-link" class="nav-menu-button">
+                        Account
+                    </div>
+                </a>
+            </div>
+            
+            <div class="nav-dropdown">
+                <a href="/index.html" onclick=logout()>
+                    <div id="logout-link" class="nav-menu-button">
+                        Log Out
+                    </div>
+                </a>
+            </div>
+    
         </div>
+    </nav>
+        `
 
-        <div class="nav-dropdown">
-            <a href="/pages/login.html">
-                <div id="login-link" class="nav-menu-button">
-                    Login
-                </div>
-            </a>
+        } else {
+            navbar += `
+    
+            <div class="nav-dropdown">
+                <a href="/pages/login.html">
+                    <div id="login-link" class="nav-menu-button">
+                        Login
+                    </div>
+                </a>
+            </div>
+    
         </div>
+    </nav>
+        `
+        }
+        
 
-    </div>
-</nav>
-    `
+    return navbar;
 }

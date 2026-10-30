@@ -17,7 +17,7 @@ async function login(event) {
         sessionStorage.setItem("loggedInUser", user.username);
         window.location.href = "/index.html";
     } else {
-        // console.log("Invalid username or password");
+        // TODO: handlel failed login
     }
 }
 

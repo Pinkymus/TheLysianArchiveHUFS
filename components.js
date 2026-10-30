@@ -26,6 +26,10 @@ const pages = {
     "/pages/login.html": {
         title: "Login",
         active: "login-link"
+    },
+    "/pages/account.html": {
+        title: "Your Account",
+        active: "account-link"
     }
 };
 
